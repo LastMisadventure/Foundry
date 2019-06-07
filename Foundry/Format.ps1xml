@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- *******************************************************************
+******************************************************************** -->
+<Configuration>
+    <ViewDefinitions>
+        <View>
+            <!--Project-->
+            <Name>Project</Name>
+            <ViewSelectedBy>
+                <TypeName>Project</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+                <AutoSize/>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Name</Label>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Branch</Label>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>RepositoryPath</Label>
+                    </TableColumnHeader>
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>Name</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Branch</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>RepositoryPath</PropertyName>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+            <!--Project-->
+        </View>
+    </ViewDefinitions>
+</Configuration>

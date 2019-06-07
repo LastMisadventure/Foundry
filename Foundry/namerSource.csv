@@ -1,0 +1,1110 @@
+#$Mask = @{1 = "Prefix" ; 2 = "Object" ; 4 = "Suffix" ; 8 = "Generic" ; 16 = "IT"}
+Value,Mask
+Slidedeck,16
+Desert,10
+Parched,9
+Quaking,9
+Performant,17
+Ascendant,10
+Shooting Star,10
+Falling Star,10
+Bloodcurdling,9
+Unveiled,25
+Preposterous,25
+Menacing,25
+Brazen,9
+Emblazoned,9
+Armageddon,10
+Apocalypse,10
+Bloodbath,10
+Catastrophe,10
+Delirious,9
+Valorous,9
+Supreme,9
+Plummeting,9
+Spectacular,25
+Searing,9
+Sensational,9
+Perverse,9
+Misled,9
+Mischievous,9
+Fearless,25
+Loathsome,9
+Obnoxious,9
+Faithless,9
+Deceiving,25
+Daring,25
+Extraordinary,9
+Intoxicating,9
+High and Mighty,9
+Beguiling,9
+Abhorrent,9
+Hurricane,10
+Breathtaking,9
+Awe-inspiring,25
+Audacious,9
+Delinquent,25
+Hypnotic,9
+Enthralling,9
+Exploit,18
+Magic,31
+Lascivious,9
+Longing,25
+Perfect,25
+Miraculous,25
+Life-changing,25
+Pretentious,25
+Mind-blowing,25
+Prevailing,25
+Reliable,25
+Uncensored,25
+Booked-solid,17
+Certified,17
+Confessional,9
+Automatic,25
+Authentic,25
+Obligatory,17
+Guaranteed,25
+Blacklisted,17
+Tested,25
+Withheld,25
+Rock-solid,17
+Clockwork,10
+Risk-free,17
+Ironclad,25
+Lifetime,25
+Little-known,25
+Unconditional,25
+Conditional,25
+Sure-fire,25
+Luxurious,25
+Unauthorized,17
+Under-the-table,17
+Restricted,17
+Permanent,25
+Professional,17
+Recession-proof,17
+Anonymous,17
+Spellbinding,9
+Tantalizing,9
+Teetering,17
+Sick and Tired,25
+Bargain,26
+Backdoor,26
+Cross-platform,17
+Bleeding Edge,17
+Stakeholder,18
+Robust,17
+Artisanal,17
+Proactive,17
+Streamlined,17
+Paradigm Shift,18
+Heavy Lifting,18
+Holistic Approach,18
+Synergy,18
+Wheelhouse,18
+Game-changer,18
+Leverage,18
+Low-hanging Fruit,18
+Thought Leader,18
+Burning Platform,18
+Ineffable,9
+Nefarious,9
+Ethereal,9
+Ephemeral,9
+Illicit,9
+Iridescent,9
+Epiphany,10
+Supine,9
+Sonder,10
+Effervescent,9
+Eloquence,10
+Eloquent,9
+Cromulent,9
+Serendipitous,9
+Incandescence,9
+Luminescence,10
+Luminescent,9
+Solitude,10
+Aurora,10
+Serendipity,10
+Cloud-hosted,17
+Liquored-up,17
+High-definition,17
+Procedurally-generated,17
+Next-generation,17
+Scalable,17
+Real-time,17
+Failure Domain,18
+Database,18
+Deep Dive,18
+Paradigm,18
+Portal,18
+Server,18
+Service Manager,18
+Deathtrap,18
+Engineer,18
+as-a-service,20
+Protocol,20
+Process,20
+Directive,20
+Action Item,20
+Meeting Minutes,20
+Project Plan,20
+Solution,20
+Podcast,20
+Slideshow,20
+PowerPoint,20
+Sharepoint Site,20
+Spreadsheet,20
+Presentation,20
+Roadmap,20
+Smoldering,9
+Icy,9
+Forlorn,9
+Blackened,9
+Merciless,9
+Hopeless,9
+Honest,9
+Honorable,9
+Harsh,9
+Joyous,9
+Broken,9
+Consuming,9
+Abyssal,9
+Leaching,9
+Wounding,9
+Thorny,9
+Shocking,9
+Flaming,9
+Freezing,9
+Blinding,9
+Starlit,9
+Strong,9
+Weak,9
+Invading,9
+Certain,9
+Dishonorable,9
+Darkened,9
+Horrifying,9
+Terrifying,9
+Diamond,9
+Iron,9
+Steel,9
+Silver,9
+Slivered,9
+Shattered,9
+Grateful,9
+Resentful,9
+Empty,9
+Abject,9
+Invincible,9
+Ageless,9
+Unchanging,9
+Eternal,9
+Perpetual,9
+Graceful,9
+Clumsy,9
+Treasonous,9
+Trusting,9
+Fateless,9
+Guilty,9
+Soulless,9
+Disastrous,9
+Catastrophic,9
+Cataclysmic,9
+Heavy,9
+Massive,9
+Masterwork,9
+Looming,9
+Hounding,9
+Painful,9
+Miserable,9
+Enraged,9
+Bedeviled,9
+Mutated,9
+Mutilated,9
+Disfigured,9
+Foolish,9
+Encircling,9
+Overwhelming,9
+Marred,9
+Senseless,9
+Tired,9
+Dreamy,9
+Deceitful,9
+Foolhardy,9
+Crestfallen,9
+Dark,9
+Dying,9
+Unforgiven,9
+Unforgettable,9
+Treasured,9
+Haunting,9
+Memorable,9
+Unknown,9
+Regretful,9
+Raging,9
+Calm,9
+Rebellious,9
+Insolent,9
+Bold,9
+Defiant,9
+Dauntless,9
+Feral,9
+Cruel,9
+Clever,9
+Confident,9
+Pure,9
+Corrupt,9
+Corrupted,9
+Fraudulent,9
+Reborn,9
+Keen,9
+Gruesome,9
+Punishing,9
+Steadfast,9
+Royal,9
+Wild,9
+Silent,9
+Severed,9
+Angelic,9
+Demonic,9
+Wrathful,9
+Seared,9
+Infinite,9
+Finite,9
+Sprawling,9
+Spiraling,9
+Immolated,9
+Mortal,9
+Immortal,9
+Moral,9
+Immoral,9
+Barbed,9
+Brave,9
+Grave,9
+Pained,9
+Focused,9
+Indestructible,9
+Bound,9
+Chained,9
+Imprisoned,9
+Spiked,9
+Blazing,9
+Bounding,9
+Astute,9
+Shrewd,9
+Prideful,9
+Arrogant,9
+Superior,9
+Inferior,9
+Harmonic,9
+Disharmonic,9
+Revealing,9
+Mighty,9
+Thoughtful,9
+Thoughtless,9
+Panicked,9
+Chaotic,9
+Tragic,9
+Celebrated,9
+Scorned,9
+Scornful,9
+Torn,9
+Cloven,9
+Enforced,9
+Forced,9
+Sinking,9
+Worsening,9
+Promised,9
+Fabled,9
+Homeward,9
+Tainted,9
+Wandering,9
+Abandoned,9
+Increasing,9
+Decreasing,9
+Diminished,9
+Weakening,9
+Weakened,9
+Overshadowing,9
+Thundering,9
+Thunderous,9
+Blistering,9
+Blistered,9
+Plagued,9
+Jagged,9
+Tortured,9
+Absent,9
+Innocent,9
+Futile,9
+Infantile,9
+Scared,9
+Mythic,9
+Temporary,9
+Temporal,9
+Fleeting,9
+Timeless,9
+Unlimited,9
+Limited,9
+Complete,9
+Incomplete,9
+Discarded,9
+Dim,9
+Bright,9
+Overflowing,9
+Impending,9
+Inescapable,9
+Knowing,9
+Virtuous,9
+Worthy,9
+Worthless,9
+Unworthy,9
+Righteous,9
+Violent,9
+Peaceful,9
+Sufficient,9
+Insufficient,9
+Betraying,9
+Concurrent,9
+Collapsing,9
+Regal,9
+Cascading,9
+Crowning,9
+Merged,9
+Lonely,9
+Blatant,9
+Injurious,9
+Toiling,9
+Endless,9
+Final,9
+Enslaved,9
+Exposed,9
+Kind,9
+Unkind,9
+Blemished,9
+Unblemished,9
+Concealing,9
+Undeniable,9
+Denied,9
+Giant,9
+Titanic,9
+Colossal,9
+Enclosed,9
+Enclosing,9
+Shrouded,9
+Reinforced,9
+Unstoppable,9
+Unbreakable,9
+Interfering,9
+Ruinous,9
+Sworn,9
+Worn,9
+Euphoric,9
+Mistaken,9
+Accidental,9
+Fiery,9
+Momentous,9
+Devoid,9
+Pallid,9
+Telltale,9
+Obvious,9
+Oblivious,9
+Unliving,9
+Synergized,9
+Multifarious,9
+Assorted,9
+Remorseful,9
+Vacant,9
+Gravid,9
+Impossible,9
+Possible,9
+Unlikely,9
+Likely,9
+Improbable,9
+Probable,9
+Mad,9
+Imfamous,9
+Famous,9
+Disloyal,9
+Loyal,9
+Terminal,9
+Enhancing,9
+Enhanced,9
+Super-human,9
+Sub-human,9
+Last,9
+First,9
+Threadbare,9
+Purposed,9
+Agonized,9
+Magnetic,9
+Soiled,9
+Filthy,9
+Dirty,9
+Clean,9
+Human,9
+Animal,9
+Obliterated,9
+Animalistic,9
+Ghostly,9
+Punished,9
+Steady,9
+Unsteady,9
+Rough,9
+Smooth,9
+Flawless,9
+Flawed,9
+Tame,9
+Untamed,9
+Servile,9
+Submissive,9
+Passive,9
+Compliant,9
+Subservient,9
+Meek,9
+Docile,9
+Assertive,9
+Dominant,9
+Proud,9
+Retroactive,9
+Taken,9
+Given,9
+Stolen,9
+Ignorant,9
+Single,9
+Double,9
+Triple,9
+Wicked,9
+Blessed,9
+Cursed,9
+Unremarkable,9
+Remarkable,9
+Selfish,9
+Selfless,9
+Greedy,9
+Generous,9
+Meager,9
+Princely,9
+Lavish,9
+Open-handed,9
+Stingy,9
+Substantial,9
+Desired,9
+Undesired,9
+Unbounded,9
+Celestial,9
+Resplendent,9
+Splendid,9
+Dazzling,9
+Magnificent,9
+Glorious,9
+Inglorious,9
+Impressive,9
+Unimpressive,9
+Stunning,9
+Holy,9
+Unholy,9
+Living,9
+Indebted,9
+Debtless,9
+Blameless,9
+Gladiatorial,9
+Worthwhile,9
+Inevitable,9
+Avoidable,9
+Artificial,9
+Natural,9
+Simple,9
+Complex,9
+Unbelievable,9
+Monstrous,9
+Lurid,9
+Ghastly,9
+Mammoth,9
+Horrific,9
+Prodigious,9
+Believable,9
+Plausible,9
+Airborne,9
+Grounded,9
+Static,9
+Dynamic,9
+Indignant,9
+Timelost,9
+Painless,9
+Numb,9
+Golden,9
+Sweet,9
+Sour,9
+Bitter,9
+Delicate,9
+Overdue,9
+Effervescent,9
+Vivacious,9
+Vibrant,9
+Still,9
+Early,9
+Late,9
+Expired,9
+Expiring,9
+Paid,9
+Unpaid,9
+Disarmed,9
+Nightmarish,9
+Fevered,9
+Feverish,9
+Bare,9
+Naked,9
+Heartbroken,9
+Stinging,9
+Conforming,9
+Dedicated,9
+Youthful,9
+Ancient,9
+Incalculable,9
+Incurable,9
+Curable,9
+Bittersweet,9
+Suggestive,9
+Yawning,9
+Possessed,9
+Liquid,9
+Comprehensive,9
+Anticlimactic,9
+Expensive,9
+Frugal,9
+Explosive,9
+Unrequited,9
+Adorable,9
+Nubile,9
+Nascent,9
+Budding,9
+Common,9
+Uncommon,9
+Rare,9
+Collaborative,9
+Heart-breaking,9
+Condescending,9
+Never-ending,9
+Star-bound,9
+Earth-bound,9
+All-inclusive,9
+High-quality,9
+Low-quality,9
+Ever-growing,9
+The ebb and flow of the,9
+Back-breaking art of the,9
+Trendy,9
+Tower,10
+Blade,10
+Star,10
+Betrayer,10
+Storm,10
+Sky,10
+Moon,10
+Sun,10
+Doubter,10
+Abyss,10
+Chasm,10
+Void,10
+Crusher,10
+Golem,10
+Statue,10
+Keep,10
+Cage,10
+Prison,10
+Child,10
+Dragon,10
+Beast,10
+Heart,10
+Mind,10
+Soul,10
+Automaton,10
+Shade,10
+Device,10
+Hound,10
+Incident,10
+Stage,10
+Vessel,10
+Tomb,10
+Vehicle,10
+Spector,10
+Nightmare,10
+Dream,10
+Folly,10
+Fool,10
+Trickster,10
+Monster,10
+Promise,10
+Pillar,10
+Demon,10
+Angel,10
+Prayer,10
+Champion,10
+Companion,10
+Mistake,10
+Whirlpool,10
+Whirlwind,10
+Waterfall,10
+Trial,10
+Fable,10
+Thought,10
+Evidence,10
+Abscess,10
+Father,10
+Mother,10
+Daughter,10
+Son,10
+Family,10
+Deceiver,10
+Receiver,10
+Innocence,10
+Illusion,10
+Successor,10
+Surrender,10
+Thief,10
+Puppet,10
+Devil,10
+Celebration,10
+Holiday,10
+Myth,10
+Chains,10
+Excuse,10
+Urge,10
+Law,10
+Rule,10
+Fortress,10
+Judge,10
+Jury,10
+Judgement,10
+Sentence,10
+Apex,10
+Pinnacle,10
+Absolution,10
+Peak,10
+Collapse,10
+Romance,10
+Sin,10
+Virtue,10
+Achievement,10
+Instrument,10
+Tool,10
+Moment,10
+Wound,10
+Injury,10
+Perjury,10
+Perjurious,9
+Ceremony,10
+Symphony,10
+Bondage,10
+Work,10
+Effort,10
+Toil,10
+Slave,10
+Instinct,10
+Truth,10
+Desire,10
+Prophecy,10
+Thrall,10
+Servant,10
+Master,10
+Accident,10
+Oath,10
+Oathbreaker,10
+Clone,10
+Regret,10
+Trauma,10
+Beacon,10
+Windfall,10
+Crescendo,10
+Game,10
+Artifact,10
+Artifice,10
+Betrayal,10
+Kingdom,10
+Century,10
+Test,10
+Destiny,10
+Penchant,10
+Addiction,10
+Predictor,10
+Predecessor,10
+Victory,10
+Defeat,10
+Stalemate,10
+Checkmate,10
+Impasse,10
+Marriage,10
+Day,10
+Month,10
+Year,10
+Hour,10
+Twilight,10
+Succor,10
+Doom,10
+Visage,10
+City,10
+Planet,10
+Eternity,10
+Greed,10
+Selfishness,10
+Selflessness,10
+Generosity,10
+Vending Machine,10
+Wave,10
+Self,10
+Criminal,10
+Officer,10
+President,10
+Representative,10
+Undertaking,10
+Journey,10
+Map,10
+Circus,10
+Maw,10
+Ritual,10
+Practitioner,10
+Leader,10
+Treaty,10
+Country,10
+Department,10
+Orb,10
+Globe,10
+Affair,10
+Android,10
+Custom,10
+Railroad,10
+Bridge,10
+Devotion,10
+Commitment,10
+Relationship,10
+Freedom,10
+Failure,10
+Success,10
+Vanguard,10
+Infection,10
+Generator,10
+Emitter,10
+Well,10
+Fountain,10
+Need,10
+Code,10
+Contraption,10
+Junction,10
+Regeneration,10
+Restoration,10
+Resurrection,10
+Construct,10
+Construction,10
+Edifice,10
+Facade,10
+Shadow,10
+Mathematics,10
+Science,10
+Nature,10
+Butcher,10
+Undertaker,10
+Crypt,10
+Grave,10
+Burial,10
+Body,10
+Evil,10
+Good,10
+Fever,10
+Emperor,10
+Broker,10
+Bastion,10
+Redoubt,10
+Armor,10
+Shield,10
+Spear,10
+Pool,10
+Emotion,10
+Commentary,10
+Summary,10
+Salvage,10
+Accession,10
+Ascension,10
+Signet,10
+Witness,10
+Stampede,10
+Mastermind,10
+Plunder,10
+Madness,10
+Spiral,10
+Reason,10
+Disciple,10
+Embrace,10
+Atlas,10
+Altar,10
+Portal,10
+Turbine,10
+Hourglass,10
+Foundry,10
+Vigil,10
+Dedication,10
+Youth,10
+Age,10
+Attrition,10
+Atrocity,10
+Edict,10
+Disease,10
+Malady,10
+Judas,10
+Galaxy,10
+Decline,10
+Union,10
+Interface,10
+Art,10
+Analogy,10
+Paradox,10
+Climax,10
+Agony,10
+Collaboration,10
+Decay,10
+Divorce,10
+Codex,10
+Philosophy,10
+Deathtrap,10
+of Solace,12
+of Justice,12
+of Doubt,12
+of Disillusionment,12
+of Shame,12
+of Horror,12
+of Fate,12
+of Apocalypse,12
+of Disenchantment,12
+of Enchantment,12
+of Darkness,12
+of Light,12
+of Sorrow,12
+of the Betrayed,12
+of the Forgotten,12
+of the Forlorn,12
+of Annihilation,12
+of Destruction,12
+Of the Ages,12
+of Treason,12
+of Treasure,12
+of Guilt,12
+of Disaster,12
+of Exhaustion,12
+of Mutilation,12
+of Mutation,12
+of Folly,12
+of the Fool,12
+of Shadow,12
+of Shadows,12
+of Disinterest,12
+of Deceit,12
+of the Future,12
+of Promises,12
+of Lies,12
+of Blame,12
+of the Unforgiven,12
+of Regret,12
+of Regrets,12
+of Rage,12
+of Misadventure,12
+of Adventure,12
+of Punishment,12
+of Wounds,12
+of Wounding,12
+of Silence,12
+of the Severed,12
+of Flame,12
+of Flames,12
+of Grace,12
+of Infinity,12
+of Agony,12
+of Carnage,12
+of Cruelty,12
+of Mortality,12
+of Immortality,12
+of Craving,12
+of Desire,12
+of Nightmares,12
+of Purification,12
+of Sin,12
+of Virtue,12
+of Debauchery,12
+of Slaughter,12
+of Purity,12
+of Corruption,12
+of Focus,12
+of the Bewildered,12
+of Hubris,12
+of Schemes,12
+of Harmony,12
+of Disharmony,12
+of Revelation,12
+of the Mighty,12
+of Panic,12
+of Chaos,12
+of Tragedy,12
+of Enforcement,12
+of Necessity,12
+of Taints,12
+of Advice,12
+of the Wanderer,12
+of Plague,12
+of Innocence,12
+of Futility,12
+of Myth,12
+of Myths,12
+of Betrayal,12
+of the Blamed,12
+of the Unjust,12
+of the Abandoned,12
+of Injustice,12
+of Circumstance,12
+of Pride,12
+of the Disavowed,12
+of Escape,12
+of Forever,12
+of Trust,12
+of Knowledge,12
+of Violence,12
+of Toils,12
+of the Endless,12
+of Consuming,12
+of Finality,12
+of Enslavement,12
+of the Denied,12
+of The Titan,12
+of Titans,12
+of Giants,12
+of the Giant,12
+of Ruin,12
+of Ruination,12
+of Skulls,12
+of Power,12
+of Worth,12
+of Worthlessness,12
+of the Impossible,12
+of the Improbable,12
+of Infamy,12
+of Fame,12
+of Loyalty,12
+of Disloyalty,12
+of Thrones,12
+of Purpose,12
+of Waning Purpose,12
+of Hands,12
+of Obliteration,12
+of Pride,12
+of Independence,12
+of Interdependence,12
+of Ignorance,12
+of Momentum,12
+of Planned Obsolescence,12
+of Wicked Desire,12
+of Glory,12
+of Magnificence,12
+of the Blameless,12
+of the Indebted,12
+of the Heartless,12
+of the Faithless,12
+of the Indignant,12
+of the Timelost,12
+of the Delicate,12
+of the Unbreakable,12
+of the Infinite,12
+of Suffering,12
+of the Lost ,12
+of the Disarmed,12
+of Disarmament,12
+of the Shadowbound,12
+of the Guilt-ridden,12
+of Infection,12
+of Brawn,12
+of the Mind,12
+of the Broken,12
+of Conformity,12
+of Destiny,12
+of Denial,12
+of Acceptance,12
+of Social Commentary,12
+of the Witness,12
+of the Relentless,12
+of the Forge,12
+of the Purity of Driven Snow,12
+of the Warped,12
+of the Impure,12
+of the Pure,12
+of Reckless Abandon,12
+of Youth,12
+of the Ancients,12
+of Attrition,12
+of the Ascended,12
+of Twilight,12
+of The Twilight,12
+of the Downward Spiral,12
+of One Man's Lies,12
+of One Man's Lie,12
+of One Man's Sky,12
+of No Man's Sky,12
+of Nullification,12
+of Teenage Unrequited Love,12
+of Unrequited Love,12
+of Accepted Risk,12
+of an Accepted Risk,12
+of the Shared Human Experience,12
+of Shared Human Experience,12
+of Human Tragedy,12
+of the Greater Good,12
+of the Bright and Terrifying Future,12
+of the Bright and Terrible Future,12
+Tweet,12
+Engine,12
+Furnace,12
+Forge,12
+Extractor,12
+Philosophy,12
+Scheme,12
+Tragedy,12
+Promise,12
+Agent,12
+Installer,12
+Database,12
+Computer,12
+Calculator,12
+Fee,12
+Fine,12
+Virus,12
+Ten-step Program,12
+Twelve-step Program,12
+Five-year Plan,12
+Retirement,12
+Network,12
+Update,12
+Entitlement,12
+Strategy,12
+Policy,12
+Privilege,12
+Upgrade,12
+Design,12
+Contractor,12
+Vendor,12
+Compactor,12
+Accord,12
+Program,12
+Check,12
+Syndrome,12
+Disorder,12
+Movement,12
+Theory,12
+Effect,12
+Cascade,12
+Result,12
+Report,12
+Alibi,12
+Guarantee,12
+Exit Strategy,12
+Paradigm,12
+Win-Win Situation,12
+Workflow,12
+Algorithm,12

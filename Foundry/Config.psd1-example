@@ -1,0 +1,14 @@
+@{
+
+    AuthorFullName  = 'Mocky M. Mockinson'
+    AuthorEmail     = 'MockyMMockison@MockItAllAndWatchItBurn.com'
+    LocalRepository = 'C:\LocalRepos'
+
+    Build           = @{
+
+        CodeCertThumbprint = 'someSignature'
+        TimestampServerURL = "http://timestamp.comodoca.com?td=sha256"
+
+    }
+
+}

@@ -1,10 +1,21 @@
 @{
 
-    AuthorFullName  = 'Mocky M. Mockinson'
-    AuthorEmail     = 'MockyMMockison@MockItAllAndWatchItBurn.com'
+    AuthorFullName  = 'Jib Job Sallywog'
     LocalRepository = 'C:\LocalRepos'
 
     Build           = @{
+
+        Module             = @{
+
+            Directories = 'class', 'private', 'public', 'tests'
+            Files       = 'Format.ps1xml', 'Type.ps1xml'
+        }
+
+        Script             = @{
+
+            Directories = 'private', 'tests'
+            Files       = $null
+        }
 
         CodeCertThumbprint = 'someSignature'
         TimestampServerURL = "http://timestamp.comodoca.com?td=sha256"

@@ -1,6 +1,6 @@
 {
   "Advanced Function": {
-    "prefix": "function",
+    "prefix": "ffunction",
     "body": [
       "function ${1:FunctionName} {",
       "",
@@ -44,7 +44,7 @@
   },
 
   "Parameter Template": {
-    "prefix": "param",
+    "prefix": "fparam",
     "body": [
       "[Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline, ValueFromRemainingArguments)]",
       "[ValidateNotNullOrEmpty()]",

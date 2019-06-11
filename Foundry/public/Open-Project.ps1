@@ -27,7 +27,7 @@ function Open-Project {
 
     process {
 
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)]:$($PSBoundParameters.Name): Opening project in default editor..."
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]:$($PSBoundParameters.Name): Opening project in Visual Studio Code..."
 
         $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
@@ -38,3 +38,6 @@ function Open-Project {
     }
 
 }
+
+
+fun

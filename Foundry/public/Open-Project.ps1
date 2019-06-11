@@ -38,6 +38,3 @@ function Open-Project {
     }
 
 }
-
-
-fun

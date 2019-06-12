@@ -26,7 +26,10 @@ function InvokePsTestSuite {
     $codeHygieneResult.Project = $Project.Name
     $codeHygieneResult.Type = 'TestSuite'
     $codeHygieneResult.Clean = $pesterResult.FailedCount -eq 0
-    $codeHygieneResult.Defects = $pesterResult.TestResult.Describe
+
+    $failedTests = $pesterResult.TestResult | Where-Object { $_.Passed -ne $true } | Select-Object -ExpandProperty Describe
+
+    $codeHygieneResult.Defects = $failedTests
 
     Write-Output $codeHygieneResult
 

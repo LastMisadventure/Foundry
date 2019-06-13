@@ -5,6 +5,9 @@ Opens a project in Visual Studio Code.
 .DESCRIPTION
 Opens a project in Visual Studio Code.
 
+.PARAMETER Name
+The name of the project that will be targeted by this operation.
+
 .EXAMPLE
 Open-Project ExmapleProject
 

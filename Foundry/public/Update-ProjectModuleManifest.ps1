@@ -13,7 +13,7 @@ Update-PsModuleManifest ExamplePowerShellModuleProject
 .NOTES
 Currently, the only thing updated is the list of exported functions. Only functions in the project's 'public' folder will be updated.
 #>
-function Update-PsModuleManifest {
+function Update-ProjectModuleManifest {
 
     [CmdletBinding(PositionalBinding, ConfirmImpact = 'low', SupportsShouldProcess)]
 
@@ -23,7 +23,7 @@ function Update-PsModuleManifest {
 
     dynamicParam {
 
-        NewDynamicParameterDictionary -DynamicParameter $script:Scoped_DynamicParams_ProjectNames
+        NewDynamicParameterDictionary -DynamicParameter $script:Scoped_DynamicParams_PsModuleProjectNames
 
     }
 
@@ -40,11 +40,11 @@ function Update-PsModuleManifest {
 
             $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($_project.Name): Updating manifest..."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name): Updating manifest..."
 
-            $project.UpdateModuleManifest()
+            $project.UpdateManifest()
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($_project.Name): Updated manifest."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name): Updated manifest."
 
         }
 

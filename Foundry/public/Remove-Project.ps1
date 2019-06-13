@@ -5,6 +5,9 @@ Removes a Project from disk - this will completely delete all Project files.
 .DESCRIPTION
 Removes a Project from disk - this will completely delete all Project files.
 
+.PARAMETER Name
+The name of the project that will be targeted by this operation.
+
 .EXAMPLE
 Remove-Project -Name IShouldNotHaveDoneThat
 
@@ -43,10 +46,6 @@ function Remove-Project {
 
                 $project.RepositoryPath.Delete($true)
 
-                UpdatePsModulePath
-
-                [Portfolio]::LoadFromRepositoryDirectory()
-
             } catch {
 
                 Write-Error -ErrorAction Stop -Exception $_.Exception
@@ -56,6 +55,10 @@ function Remove-Project {
     }
 
     end {
+
+        UpdatePsModulePath
+
+        [Portfolio]::LoadFromRepositoryDirectory()
 
     }
 

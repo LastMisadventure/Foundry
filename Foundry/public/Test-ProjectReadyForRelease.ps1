@@ -5,6 +5,9 @@ Combines all code hygeine checks and returns a [bool] if all checks were passed 
 .DESCRIPTION
 Combines all code hygeine checks and returns a [bool] if all checks were passed or not.
 
+.PARAMETER Name
+The name of the project that will be targeted by this operation.
+
 .EXAMPLE
 Test-ProjectReadyForRelease -Name ThisShouldBeWorkingNow
 

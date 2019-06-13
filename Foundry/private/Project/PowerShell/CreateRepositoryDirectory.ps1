@@ -27,6 +27,16 @@ function CreateRepositoryDirectory {
 
         New-Item @splat | Out-Null
 
+        $splat = @{
+
+            Name = ".vscode"
+            Path = $Project.RepositoryPath
+            Type = 'Directory'
+
+        }
+
+        New-Item @splat | Out-Null
+
         $taskResult = 'Success'
 
     } catch {

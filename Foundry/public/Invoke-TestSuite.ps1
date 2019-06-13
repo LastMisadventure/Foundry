@@ -5,6 +5,9 @@ Invokes the language-specific testing engine for the given project.
 .DESCRIPTION
 Invokes the language-specific testing engine for the given project.
 
+.PARAMETER Name
+The name of the project that will be targeted by this operation.
+
 .EXAMPLE
 Invoke-TestSuite ExampleProject
 

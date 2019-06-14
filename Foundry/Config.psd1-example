@@ -1,9 +1,10 @@
 @{
 
-    AuthorFullName  = 'Jib Job Sallywog'
-    LocalRepository = 'C:\LocalRepos'
+    AuthorFullName    = 'Gib Gog Goginard'
+    LocalRepository   = 'C:\LocalRepos'
+    RepositoryArchive = 'c:\RepoArchive'
 
-    Build           = @{
+    Build             = @{
 
         Module             = @{
 

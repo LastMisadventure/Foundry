@@ -10,7 +10,7 @@ function UpdatePsModulePath {
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Updating PsModulePath to include all PowerShell Module projects' module directory. This allows auto-import of modules to work correctly..."
 
-    $currentNonProjectModulePaths = GetNonProjectModulesInPsModulePath
+    $currentNonProjectModulePaths = GetNonProjectModulesInPsModulePath | Select-Object -Unique
 
     $projectPowerShellModuleProjectPaths = ([Portfolio]::FindAll() | Where-Object { $_.IsModule -eq $true }).RepositoryPath.FullName
 

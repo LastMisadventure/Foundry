@@ -30,11 +30,13 @@ function InvokePsScriptAnalyzer {
 
     $codeHygieneResult.Clean = $false
 
-    $codeHygieneResult.Defects = $analyzerResult.ScriptName
-
     if ($null -eq $codeHygieneResult.Defects) {
 
         $codeHygieneResult.Clean = $true
+
+    } else {
+
+        $codeHygieneResult.Defects = $analyzerResult.ScriptName
 
     }
 

@@ -55,7 +55,7 @@ Thanks to Nathan Smith, from whom I stole this code.
 #>
 function New-MagicQuadrant {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium')]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'low')]
 
     [OutputType([String])]
 
@@ -81,8 +81,6 @@ function New-MagicQuadrant {
     )
 
     begin {
-
-        # Private functions.
 
         function Get-RandXCoord ($width, $Product) {
 
@@ -115,9 +113,9 @@ function New-MagicQuadrant {
             else {
                 $line = $blank_line
             }
+
             Write-Output $line
         }
-
 
     }
 
@@ -184,13 +182,9 @@ function New-MagicQuadrant {
 
         catch {
 
-            Write-Error -ErrorAction Stop -Exception $_.Exception
+            $PSCmdlet.ThrowTerminatingError($PSitem)
 
         }
-
-    }
-
-    end {
 
     }
 

@@ -26,10 +26,6 @@ function Move-ProjectToArchive {
 
     }
 
-    begin {
-
-    }
-
     process {
 
         try {
@@ -49,10 +45,6 @@ function Move-ProjectToArchive {
             Write-Error -ErrorAction Stop -Exception $_.Exception
 
         }
-
-    }
-
-    end {
 
     }
 

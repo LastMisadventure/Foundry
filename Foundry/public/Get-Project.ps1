@@ -24,7 +24,7 @@ Foundry (master) C:\LocalRepos\Foundry
 #>
 function Get-Project {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium', DefaultParameterSetName = 'GetAll')]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'low', DefaultParameterSetName = 'GetAll')]
 
     param (
 
@@ -34,10 +34,6 @@ function Get-Project {
         $Name
 
     )
-
-    begin {
-
-    }
 
     process {
 
@@ -49,12 +45,13 @@ function Get-Project {
 
         if ($PSCmdlet.ParameterSetName -eq 'GetProjectByNameLike') {
 
-            [Portfolio]::FindByNameFuzzy($Name)
+            $Name | ForEach-Object {
+
+                [Portfolio]::FindByNameFuzzy($_)
+
+            }
 
         }
-    }
-
-    end {
 
     }
 

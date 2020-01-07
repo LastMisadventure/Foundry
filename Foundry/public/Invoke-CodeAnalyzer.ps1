@@ -27,10 +27,7 @@ function Invoke-CodeAnalyzer {
 
     process {
 
-        $spTarget = $PsBoundParameters.Name
-        $spOperation = 'Perform PSScriptAnalyzer Analysis'
-
-        if ($PsCmdlet.ShouldProcess($spTarget, $spOperation)) {
+        if ($PsCmdlet.ShouldProcess($PsBoundParameters.Name, 'Perform PSScriptAnalyzer Analysis')) {
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking code analyzer for the project..."
 
@@ -41,5 +38,7 @@ function Invoke-CodeAnalyzer {
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Analysis has completed."
 
         }
+
     }
+
 }

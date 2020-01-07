@@ -43,7 +43,9 @@ function Get-RandomReleaseName {
         $GenerationData = @{
 
             DataSource = Import-Csv -Path (Join-Path -Path (Split-Path -Path $PSScriptRoot -Parent) -ChildPath "NamerSource.csv") -ErrorAction Stop
+
             Parts      = @{1 = "PrefixParts"; 2 = "ObjectParts"; 4 = "SuffixParts" }
+
             ThemeMap   = @{"IT" = 16 ; "Generic" = 8 }
 
         }

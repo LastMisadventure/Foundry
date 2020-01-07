@@ -11,9 +11,9 @@ function UpdateModuleManifest {
 
     )
 
-    [System.IO.FileInfo] $_moduleManifestPath = Join-Path -Path $Project.ProjectPath -ChildPath ($Project.Name + '.psd1')
+    [System.IO.FileInfo] $moduleManifestPath = Join-Path -Path $Project.ProjectPath -ChildPath ($Project.Name + '.psd1')
 
-    if (!(Test-Path -Path $_moduleManifestPath.FullName -Type Leaf)) {
+    if (!(Test-Path -Path $moduleManifestPath.FullName -Type Leaf)) {
 
         throw "Unable to locate manifest for module $($Project.Name)!"
 
@@ -21,13 +21,13 @@ function UpdateModuleManifest {
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Building list of exported functions..."
 
-    [string[]] $_publicFunctionNames = (Get-ChildItem -File -Recurse -Path (Join-Path -Path $Project.ProjectPath -ChildPath 'public')).BaseName
+    [string[]] $publicFunctionNames = (Get-ChildItem -File -Recurse -Path (Join-Path -Path $Project.ProjectPath -ChildPath 'public')).BaseName
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Found $($($_publicFunctionNames | Measure-Object).Count) exported functions. They will be added to the manifest."
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Found $($($publicFunctionNames | Measure-Object).Count) exported functions. They will be added to the manifest."
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): The following cmdlets will be exported: $($_publicFunctionNames -join ', ')."
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): The following cmdlets will be exported: $($publicFunctionNames -join ', ')."
 
-    Update-ModuleManifest -Path $_moduleManifestPath -FunctionsToExport $_publicFunctionNames -ErrorAction Stop
+    Update-ModuleManifest -Path $moduleManifestPath -FunctionsToExport $publicFunctionNames -ErrorAction Stop
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Manifest updated"
 

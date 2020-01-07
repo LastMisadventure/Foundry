@@ -15,7 +15,7 @@ function CreateNewProject {
 
     $project.IsModule = $Request.Type -eq 'Module'
 
-    $result = [PSCustomObject][ordered]@{
+    $result = [PSCustomObject] [ordered] @{
 
         CreateRepositoryDirectory = CreateRepositoryDirectory $project
 
@@ -51,6 +51,8 @@ function CreateNewProject {
 
     [Portfolio]::LoadFromRepositoryDirectory()
 
-    Write-Output $result
+    Write-Information -Tags TaskResult -MessageData $result
+
+    Write-Output $project
 
 }

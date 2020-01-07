@@ -36,6 +36,7 @@ function Remove-Project {
     process {
 
         $shouldProcessMessage = 'remove project - this will delete all project files from the disk'
+
         $shouldProcessTarget = $PSBoundParameters.Name
 
         if ($PSCmdlet.ShouldProcess($shouldProcessMessage, $shouldProcessTarget)) {
@@ -48,7 +49,7 @@ function Remove-Project {
 
             } catch {
 
-                Write-Error -ErrorAction Stop -Exception $_.Exception
+                $PSCmdlet.ThrowTerminatingError($PSitem)
 
             }
         }

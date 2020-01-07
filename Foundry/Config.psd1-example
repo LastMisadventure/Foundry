@@ -1,7 +1,9 @@
 @{
 
-    AuthorFullName    = 'Gib Gog Goginard'
+    AuthorFullName    = 'Gib Gob Gobinard'
+
     LocalRepository   = 'C:\LocalRepos'
+
     RepositoryArchive = 'c:\RepoArchive'
 
     Build             = @{
@@ -9,16 +11,19 @@
         Module             = @{
 
             Directories = 'class', 'private', 'public', 'tests'
+
             Files       = 'Format.ps1xml', 'Type.ps1xml'
         }
 
         Script             = @{
 
             Directories = 'private', 'tests'
+
             Files       = $null
         }
 
         CodeCertThumbprint = 'someSignature'
+
         TimestampServerURL = "http://timestamp.comodoca.com?td=sha256"
 
     }

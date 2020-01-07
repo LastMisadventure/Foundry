@@ -55,22 +55,13 @@ function New-Project {
 
     )
 
-    begin {
-
-    }
-
     process {
 
-        $spOperation = "Create a new project named '$($Name)'."
+        if ($PsCmdlet.ShouldProcess("Create a new $($Type) project named '$($Name)'.")) {
 
-        if ($PsCmdlet.ShouldProcess($spOperation)) {
-
-            Write-Output ([ProjectFactory]::Create($PSBoundParameters))
+            CreateNewProject $PSBoundParameters
 
         }
-    }
-
-    end {
 
     }
 

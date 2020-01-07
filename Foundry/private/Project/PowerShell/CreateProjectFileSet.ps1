@@ -37,7 +37,7 @@ function CreateProjectFileSet {
 
     } catch {
 
-        Write-Error -Exception $_.Exception
+        Write-Error -Exception $_.Exception -ErrorAction Continue
 
     } finally {
 

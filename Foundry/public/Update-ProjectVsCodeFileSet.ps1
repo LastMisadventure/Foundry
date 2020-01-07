@@ -29,17 +29,9 @@ function Update-ProjectVsCodeFileSet {
 
     }
 
-    begin {
-
-    }
-
     process {
 
         CopyVsCodeFileSet -Project ([Portfolio]::FindOneByNameExact($PsBoundParameters.Name)) | Out-Null
-
-    }
-
-    end {
 
     }
 

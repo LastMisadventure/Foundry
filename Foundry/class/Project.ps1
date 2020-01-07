@@ -1,15 +1,18 @@
 #region Enums
 
+#endregion
+
 class CodeHygieneResult {
 
     [string] $Project
+
     [string] $Type
+
     [bool] $Clean
+
     [object[]] $Defects
 
 }
-
-#endregion
 
 #region Project
 
@@ -34,9 +37,13 @@ class Project {
     Project ([System.Io.DirectoryInfo] $Directory) {
 
         $this.Name = $Directory.Name
+
         $this.RepositoryPath = $Directory.FullName
+
         $this.ProjectPath = (Join-Path -Path $Directory.FullName -ChildPath $Directory.Name)
+
         $this.GitPath = (Join-Path -Path $Directory.FullName -ChildPath ".git")
+
         $this.TestPath = (Join-Path -Path $this.ProjectPath.FullName -ChildPath "tests")
 
     }

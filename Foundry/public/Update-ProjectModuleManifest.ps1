@@ -27,16 +27,9 @@ function Update-ProjectModuleManifest {
 
     }
 
-    begin {
-
-    }
-
     process {
 
-        $shouldProcessMessage = 'update module manifest file'
-        $shouldProcessTarget = $PSBoundParameters.Name
-
-        if ($PSCmdlet.ShouldProcess($shouldProcessMessage, $shouldProcessTarget)) {
+        if ($PSCmdlet.ShouldProcess('update module manifest file', $PSBoundParameters.Name)) {
 
             $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
@@ -47,10 +40,6 @@ function Update-ProjectModuleManifest {
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name): Updated manifest."
 
         }
-
-    }
-
-    end {
 
     }
 

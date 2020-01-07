@@ -21,24 +21,13 @@ function Update-PsModulePath {
 
     )
 
-    begin {
-
-    }
-
     process {
 
-        $shouldProcessMessage = 'update'
-        $shouldProcessTarget = 'PsModulePath environmental variable'
-
-        if ($PSCmdlet.ShouldProcess($shouldProcessMessage, $shouldProcessTarget)) {
+        if ($PSCmdlet.ShouldProcess('update PsModulePath environmental variable')) {
 
             [Portfolio]::UpdatePsModulePath()
 
         }
-
-    }
-
-    end {
 
     }
 

@@ -20,7 +20,9 @@ function CreateRepositoryDirectory {
         $splat = @{
 
             Name = $Project.Name
+
             Path = $script:Scoped_ModuleConfig.LocalRepository
+
             Type = 'Directory'
 
         }
@@ -30,7 +32,9 @@ function CreateRepositoryDirectory {
         $splat = @{
 
             Name = ".vscode"
+
             Path = $Project.RepositoryPath
+
             Type = 'Directory'
 
         }

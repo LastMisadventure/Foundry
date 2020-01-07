@@ -29,10 +29,6 @@ function Invoke-TestSuite {
 
     }
 
-    begin {
-
-    }
-
     process {
 
         Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking test suite for the project..."
@@ -45,7 +41,4 @@ function Invoke-TestSuite {
 
     }
 
-    end {
-
-    }
 }

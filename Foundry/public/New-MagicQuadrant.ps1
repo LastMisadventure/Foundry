@@ -12,7 +12,7 @@ Which product to accurately and very fairly evaluate!
 The title of the Magic Quadrant.
 
 .PARAMETER ResearchContribution
-Contribute this many dollars to the 'market research'. No matter how much you spend, the outcome will not change!
+Contribute this many dollars to the 'market research'. No matter how much you spend, the outcome will not change! We "'promise'"!
 
 .EXAMPLE
 New-MagicQuadrant -ProductName PowerShell -Title 'Litterally the best at everything!' -ResearchContribution 500000

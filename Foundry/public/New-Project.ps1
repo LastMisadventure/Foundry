@@ -20,7 +20,9 @@ The new project will not be opened in Visual Studio Code after creation.
 The new project will not be intialized in git.
 
 .EXAMPLE
-An example
+# Create a new module. By default, a git repository is created and the project is automatically opened in VSCode.
+
+New-Project -Name BeExceptional -Type Module -Verbose
 
 .NOTES
 General notes

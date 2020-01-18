@@ -1,3 +1,23 @@
+<#
+.SYNOPSIS
+Increments a module's version number (as stored in its manifest).
+
+.DESCRIPTION
+Increments a module's version number (as stored in its manifest).
+
+.PARAMETER IncrementMinor
+Increment the minor version.
+
+.PARAMETER IncrementMajor
+Increment the major version.
+
+.EXAMPLE
+ProjectModuleVersion Core -IncrementMinor
+
+.NOTES
+General notes
+#>
+
 function Set-ProjectModuleVersion {
 
     [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium', SupportsShouldProcess)]

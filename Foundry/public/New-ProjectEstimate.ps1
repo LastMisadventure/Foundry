@@ -9,13 +9,17 @@ Creates a three-point estimate.
 How long you think the task would take if all factors are optimal.
 
 .PARAMETER NominalEstimate
-Parameter description
+How long you think the task would take given your real-world experience with similar activities and your current environment.
 
 .PARAMETER PessimisticEstimate
-Parameter description
+How long you think the task would take if all factors are sub-optimal.
 
 .EXAMPLE
-An example
+New-ProjectEstimate -OptimisticEstimate 8 -NominalEstimate 17 -PessimisticEstimate 30
+
+Duration Uncertainty
+-------- -----------
+    17.7         3.7
 
 .NOTES
 General notes

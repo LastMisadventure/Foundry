@@ -13,6 +13,14 @@ function TestIfGitUsed {
 
     )
 
-    Write-Output (Test-Path -Path $Project.GitPath -PathType Container)
+    try {
+
+        Write-Output (Test-Path -Path $Project.GitPath -PathType Container)
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
+
+    }
 
 }

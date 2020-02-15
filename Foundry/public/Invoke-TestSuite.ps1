@@ -30,13 +30,21 @@ function Invoke-TestSuite {
 
     process {
 
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking test suite for the project..."
+        try {
 
-        $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking test suite for the project..."
 
-        $project.InvokeTestSuite()
+            $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Test suite has completed."
+            $project.InvokeTestSuite()
+
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Test suite has completed."
+
+        } catch {
+
+            $PSCmdlet.ThrowTerminatingError($PSItem)
+
+        }
 
     }
 

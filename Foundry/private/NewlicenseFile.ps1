@@ -43,7 +43,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
     } catch {
 
-        Write-Error "Failed to generate license file."
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     }
 

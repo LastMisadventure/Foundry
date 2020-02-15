@@ -10,7 +10,9 @@ The new project's name; this will also be the name of the git repository.
 
 .PARAMETER Type
 Choose between a 'Module' or a 'Script':
+
 - Module: A complete PowerShell module with a main psm1 file, a manifest, and other items.
+
 - Script: A basic file structure intended for a single script with supporting private functions.
 
 .PARAMETER SkipOpeningNewProject

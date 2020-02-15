@@ -13,6 +13,14 @@ function GetCurrentGitBranch {
 
     )
 
-    Write-Output (posh-git\Get-GitStatus -gitDir $Project.GitPath).Branch
+    try {
+
+        Write-Output (posh-git\Get-GitStatus -gitDir $Project.GitPath).Branch
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
+
+    }
 
 }

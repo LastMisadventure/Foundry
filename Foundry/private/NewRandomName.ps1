@@ -11,10 +11,6 @@ function NewRandomName {
 
     )
 
-    begin {
-
-    }
-
     process {
 
         try {
@@ -22,7 +18,8 @@ function NewRandomName {
             $tokens = $GenerationData.Parts.Keys | Sort-Object | ForEach-Object {
 
                 $_currentPartMask = $_ + $GenerationData.ThemeMap[$Theme]
-                $_currentPartValue = $($GenerationData.DataSource.Where( {$_.Mask -eq $_currentPartMask}).Value | Get-Random)
+
+                $_currentPartValue = $($GenerationData.DataSource.Where( { $_.Mask -eq $_currentPartMask }).Value | Get-Random)
 
                 Write-Output $_currentPartValue
 
@@ -35,10 +32,6 @@ function NewRandomName {
             Write-Error -ErrorAction Stop -Exception $_.Exception
 
         }
-
-    }
-
-    end {
 
     }
 

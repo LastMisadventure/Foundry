@@ -1,7 +1,3 @@
-#region Enums
-
-#endregion
-
 class CodeHygieneResult {
 
     [string] $Project
@@ -13,8 +9,6 @@ class CodeHygieneResult {
     [object[]] $Defects
 
 }
-
-#region Project
 
 class Project {
 
@@ -92,10 +86,6 @@ class Project {
 
 }
 
-#endregion
-
-#region ProjectFactories
-
 class ProjectFactory {
 
     static [object] Create ([hashtable] $Request) {
@@ -143,5 +133,3 @@ class Portfolio {
     }
 
 }
-
-#endregion

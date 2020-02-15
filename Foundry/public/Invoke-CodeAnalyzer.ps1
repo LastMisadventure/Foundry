@@ -29,13 +29,21 @@ function Invoke-CodeAnalyzer {
 
         if ($PsCmdlet.ShouldProcess($PsBoundParameters.Name, 'Perform PSScriptAnalyzer Analysis')) {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking code analyzer for the project..."
+            try {
 
-            $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
+                Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Invoking code analyzer for the project..."
 
-            $project.InvokeCodeAnalyzer()
+                $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Analysis has completed."
+                $project.InvokeCodeAnalyzer()
+
+                Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Analysis complete."
+
+            } catch {
+
+                $PsCmdlet.ThrowTerminatingError($PSItem)
+
+            }
 
         }
 

@@ -47,7 +47,7 @@ function Get-PsModulePath {
 
                 $currentScope = $_
 
-                ([System.Environment]::GetEnvironmentVariable("PSModulePath", $currentScope)) -split ';' | ForEach-Object {
+                ([System.Environment]::GetEnvironmentVariable('PSModulePath', $currentScope)) -split ';' | ForEach-Object {
 
                     [PSCustomObject] [ordered] @{
 

@@ -1,27 +1,35 @@
 function UpdatePsModulePath {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium')]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'low')]
 
     param (
 
     )
 
-    $ErrorActionPreference = 'Stop'
+    try {
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Updating PsModulePath to include all PowerShell Module projects' module directory. This allows auto-import of modules to work correctly..."
+        $ErrorActionPreference = 'Stop'
 
-    $currentNonProjectModulePaths = GetNonProjectModulesInPsModulePath | Select-Object -Unique
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Updating PsModulePath to include all PowerShell Module projects' module directory. This allows auto-import of modules to work correctly."
 
-    $projectPowerShellModuleProjectPaths = ([Portfolio]::FindAll() | Where-Object { $_.IsModule -eq $true }).RepositoryPath.FullName
+        $nonProjectModulesInPsModulePath = GetNonProjectModulesInPsModulePath | Select-Object -Unique
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: A total of $($($projectPowerShellModuleProjectPaths | Measure-Object).Count) modules will be added to PsModulePath."
+        $projectPowerShellModuleProjectPaths = ([Portfolio]::FindAll() | Where-Object { $_.IsModule -eq $true }).RepositoryPath.FullName
 
-    $newPsModulePathValue = ($currentNonProjectModulePaths + $projectPowerShellModuleProjectPaths) -join ';'
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: A total of $($($projectPowerShellModuleProjectPaths | Measure-Object).Count) modules will be added to PsModulePath."
 
-    [System.Environment]::SetEnvironmentVariable("PSModulePath", $newPsModulePathValue, 'User')
+        $newPsModulePathValue = ($nonProjectModulesInPsModulePath + $projectPowerShellModuleProjectPaths) -join ';'
 
-    Write-Warning "[$($MyInvocation.MyCommand.Name)]: A new PowerShell session is required for changes to 'PsModulePath' environmental variable to take effect."
+        [System.Environment]::SetEnvironmentVariable('PSModulePath', $newPsModulePathValue, 'User')
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Updated PsModulePath to include all Projects."
+        Write-Warning "[$($MyInvocation.MyCommand.Name)]: A new PowerShell session is required for changes to 'PsModulePath' environmental variable to take effect."
+
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Updated PsModulePath to include all Projects."
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
+
+    }
 
 }

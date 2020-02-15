@@ -11,10 +11,18 @@ function InitializeSourceControl {
 
     )
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initializing empty git repository at $($Project.RepositoryPath.FullName)..."
+    try {
 
-    git init ($Project.RepositoryPath.FullName) | Out-Null
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initializing empty git repository at $($Project.RepositoryPath.FullName)..."
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initialized empty git repository at $($Project.RepositoryPath.FullName)."
+        git init ($Project.RepositoryPath.FullName) | Out-Null
+
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initialized empty git repository at $($Project.RepositoryPath.FullName)."
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
+
+    }
 
 }

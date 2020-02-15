@@ -4,27 +4,39 @@ function LoadAllProjectsInLocalRepository {
 
     [OutputType([Project[]])]
 
-    $splat = @{
+    param ()
 
-        Path      = $script:Scoped_ModuleConfig.LocalRepository
-        Directory = $true
+    try {
 
-    }
+        $splat = @{
 
-    Get-ChildItem @splat | ForEach-Object {
+            Path      = $script:Scoped_ModuleConfig.LocalRepository
 
-        $project = [Project]::New($_)
-
-        $project.IsModule = TestIsModule $project
-
-        if (TestIfGitUsed $project) {
-
-            $project.Branch = GetCurrentGitBranch $project
-            $project.RepositoryInitialized = $true
+            Directory = $true
 
         }
 
-        Write-Output $project
+        Get-ChildItem @splat | ForEach-Object {
+
+            $project = [Project]::New($_)
+
+            $project.IsModule = TestIsModule $project
+
+            if (TestIfGitUsed $project) {
+
+                $project.Branch = GetCurrentGitBranch $project
+
+                $project.RepositoryInitialized = $true
+
+            }
+
+            Write-Output $project
+
+        }
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     }
 

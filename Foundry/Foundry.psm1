@@ -30,6 +30,6 @@ try {
 
 } catch {
 
-    $PSCmdlet.ThrowTerminatingError($PSitem)
+    throw $_.Exception
 
 }

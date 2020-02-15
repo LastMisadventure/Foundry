@@ -11,48 +11,56 @@ function CreateNewProject {
 
     )
 
-    $project = [Project]::New((Join-Path -Path $script:Scoped_ModuleConfig.LocalRepository -ChildPath $Request.Name))
+    try {
 
-    $project.IsModule = $Request.Type -eq 'Module'
+        $project = [Project]::New((Join-Path -Path $script:Scoped_ModuleConfig.LocalRepository -ChildPath $Request.Name))
 
-    $result = [PSCustomObject] [ordered] @{
+        $project.IsModule = $Request.Type -eq 'Module'
 
-        CreateRepositoryDirectory = CreateRepositoryDirectory $project
+        $result = [PSCustomObject] [ordered] @{
 
-        CreateRepositoryFileSet   = CreateRepositoryFileSet $project
+            CreateRepositoryDirectory = CreateRepositoryDirectory $project
 
-        CreateProjectDirectorySet = CreateProjectDirectorySet $project
+            CreateRepositoryFileSet   = CreateRepositoryFileSet $project
 
-        CreateProjectFileSet      = CreateProjectFileSet $project
+            CreateProjectDirectorySet = CreateProjectDirectorySet $project
 
-        CopyVsCodeFileSet         = CopyVsCodeFileSet $project
+            CreateProjectFileSet      = CreateProjectFileSet $project
+
+            CopyVsCodeFileSet         = CopyVsCodeFileSet $project
+
+        }
+
+        if ($Request.Type -eq 'Module') {
+
+            CreateModuleFileSet $project
+
+            UpdatePsModulePath
+
+        }
+
+        if (!$Request.ContainsKey('SkipSourceControlInit')) {
+
+            InitializeSourceControl $project
+
+        }
+
+        if (!$Request.ContainsKey('SkipOpeningNewProject')) {
+
+            $project.Open()
+
+        }
+
+        [Portfolio]::LoadFromRepositoryDirectory()
+
+        Write-Information -Tags TaskResult -MessageData $result
+
+        Write-Output $project
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     }
-
-    if ($Request.Type -eq 'Module') {
-
-        CreateModuleFileSet $project
-
-        UpdatePsModulePath
-
-    }
-
-    if (!$Request.ContainsKey('SkipSourceControlInit')) {
-
-        InitializeSourceControl $project
-
-    }
-
-    if (!$Request.ContainsKey('SkipOpeningNewProject')) {
-
-        $project.Open()
-
-    }
-
-    [Portfolio]::LoadFromRepositoryDirectory()
-
-    Write-Information -Tags TaskResult -MessageData $result
-
-    Write-Output $project
 
 }

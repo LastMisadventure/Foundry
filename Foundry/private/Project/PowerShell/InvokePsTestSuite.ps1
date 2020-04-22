@@ -22,13 +22,19 @@ function InvokePsTestSuite {
 
     }
 
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Running Pester tests..."
+
     $pesterResult = Invoke-Pester @splat
+
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): RanPester tests."
 
     $codeHygieneResult = [CodeHygieneResult]::New()
 
     $codeHygieneResult.Project = $Project.Name
+
     $codeHygieneResult.Type = 'TestSuite'
-    $codeHygieneResult.Clean = $pesterResult.FailedCount -eq 0
+
+    $codeHygieneResult.Pass = $pesterResult.FailedCount -eq 0
 
     $failedTests = $pesterResult.TestResult | Where-Object { $_.Passed -ne $true } | Select-Object -ExpandProperty Describe
 

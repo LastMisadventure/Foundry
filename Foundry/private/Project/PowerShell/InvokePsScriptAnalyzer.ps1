@@ -23,7 +23,11 @@ function InvokePsScriptAnalyzer {
 
     }
 
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Analyzing code..."
+
     $analyzerResult = Invoke-ScriptAnalyzer @splat
+
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Analyzed code."
 
     $codeHygieneResult = [CodeHygieneResult]::New()
 
@@ -31,11 +35,11 @@ function InvokePsScriptAnalyzer {
 
     $codeHygieneResult.Project = $Project.Name
 
-    $codeHygieneResult.Clean = $false
+    $codeHygieneResult.Pass = $false
 
     if ($null -eq $codeHygieneResult.Defects) {
 
-        $codeHygieneResult.Clean = $true
+        $codeHygieneResult.Pass = $true
 
     } else {
 

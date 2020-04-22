@@ -45,7 +45,7 @@ function CreateRepositoryDirectory {
 
     } catch {
 
-        Write-Error -Exception $_.Exception
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     } finally {
 

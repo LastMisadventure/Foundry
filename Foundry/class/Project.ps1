@@ -4,7 +4,7 @@ class CodeHygieneResult {
 
     [string] $Type
 
-    [bool] $Clean
+    [bool] $Pass
 
     [object[]] $Defects
 
@@ -13,6 +13,8 @@ class CodeHygieneResult {
 class Project {
 
     [string] $Name
+
+    [string] $Description
 
     [System.IO.DirectoryInfo] $RepositoryPath
 
@@ -72,7 +74,7 @@ class Project {
 
         $testSuiteResult = $this.InvokeTestSuite()
 
-        if (($codeAnalysisResult.Clean, $testSuiteResult.Clean) -contains $false) {
+        if (($codeAnalysisResult.Pass, $testSuiteResult.Pass) -contains $false) {
 
             return $false
 

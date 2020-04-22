@@ -6,6 +6,8 @@
 
     RepositoryArchive = 'c:\RepoArchive'
 
+    NugetRepositoryName = 'APSRepository'
+
     Build             = @{
 
         Module             = @{
@@ -13,6 +15,7 @@
             Directories = 'class', 'private', 'public', 'tests'
 
             Files       = 'Format.ps1xml', 'Type.ps1xml'
+
         }
 
         Script             = @{
@@ -20,6 +23,7 @@
             Directories = 'private', 'tests'
 
             Files       = $null
+
         }
 
         CodeCertThumbprint = 'someSignature'

@@ -27,9 +27,11 @@ function CreateProjectDirectorySet {
 
         $directorySet | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Creating module directory: $($_)."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating module directory: $($_)."
 
             New-Item -ItemType Directory -Name $_ -Path (Join-Path -Path $Project.RepositoryPath -ChildPath $Project.Name) | Out-Null
+
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created module directory."
 
         }
 
@@ -37,7 +39,7 @@ function CreateProjectDirectorySet {
 
     } catch {
 
-        Write-Error -Exception $_.Exception
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     } finally {
 

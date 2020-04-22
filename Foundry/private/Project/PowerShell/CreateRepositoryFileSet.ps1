@@ -21,9 +21,11 @@ function CreateRepositoryFileSet {
 
         $repoistoryFileSet | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Creating repository file: $($_) in $($Project.RepositoryPath)."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($Project.RepositoryPath)."
 
             New-Item -ItemType File -Name $_ -Path $Project.RepositoryPath | Out-Null
+
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($Project.RepositoryPath)."
 
         }
 
@@ -33,7 +35,7 @@ function CreateRepositoryFileSet {
 
     } catch {
 
-        Write-Error -Exception $_.Exception
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     } finally {
 

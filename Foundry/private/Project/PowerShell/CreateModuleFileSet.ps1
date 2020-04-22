@@ -21,9 +21,11 @@ function CreateModuleFileSet {
 
         $moduleFiles | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Creating module file: $($_) in $($Project.ProjectPath). "
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating module file: $($_) in $($Project.ProjectPath)..."
 
             New-Item -ItemType File -Name $_ -Path $Project.ProjectPath | Out-Null
+
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created module file."
 
         }
 
@@ -33,7 +35,7 @@ function CreateModuleFileSet {
 
     } catch {
 
-        Write-Error -Exception $_.Exception
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     } finally {
 

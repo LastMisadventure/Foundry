@@ -14,8 +14,11 @@ function InvokePsScriptAnalyzer {
     $splat = @{
 
         Verbose  = $false
+
         Severity = 'Error', 'Warning'
+
         Recurse  = $true
+
         Path     = $Project.ProjectPath
 
     }

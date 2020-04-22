@@ -13,8 +13,11 @@ function InvokePsTestSuite {
     $splat = @{
 
         Show     = 'None'
+
         PassThru = $true
+
         Strict   = $true
+
         Script   = $Project.TestPath
 
     }

@@ -4,4 +4,12 @@ param (
 
 )
 
-Get-ChildItem -File -Path $PSScriptRoot\.vscode | Copy-Item -Destination $PSScriptRoot\Foundry\private\VsCode\Templates -Force
+try {
+
+    Get-ChildItem -File -Path $PSScriptRoot\.vscode -ErrorAction Stop | Copy-Item -Destination $PSScriptRoot\Foundry\private\VsCode\Templates -Force -ErrorAction Stop
+
+} catch {
+
+    $PSCmdlet.ThrowTerminatingError($PSitem)
+
+}

@@ -29,7 +29,7 @@ function NewRandomName {
 
         } catch {
 
-            Write-Error -ErrorAction Stop -Exception $_.Exception
+            $PSCmdlet.ThrowTerminatingError($PSItem)
 
         }
 

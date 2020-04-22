@@ -23,7 +23,7 @@
       "",
       "\t\t } catch {",
       "",
-      "\t\t\tWrite-Error -ErrorAction Stop -Exception \\$_.Exception",
+      "\t\t\t\\$PSCmdlet.ThrowTerminatingError(\\$PSitem)",
       "",
       "\t\t}",
       "",
@@ -52,5 +52,37 @@
       "\\$${1:Input1}"
     ],
     "description": "Parameter template"
+  },
+  "TryCatch": {
+    "prefix": "ftry",
+    "body": [
+      "\ttry {",
+      "",
+      "\t\t$0",
+      "",
+      "\t } catch {",
+      "",
+      "\t\t\\$PSCmdlet.ThrowTerminatingError(\\$PSitem)",
+      "",
+      "\t}"
+    ],
+    "description": "TryCatch"
+  },
+  "TryCatchFinally": {
+    "prefix": "ftryf",
+    "body": [
+      "\ttry {",
+      "",
+      "\t\t$0",
+      "",
+      "\t } catch {",
+      "",
+      "\t\t\\$PSCmdlet.ThrowTerminatingError(\\$PSitem)",
+      "",
+      "\t} finally {",
+      "",
+      ""
+    ],
+    "description": "TryCatchFinally"
   }
 }

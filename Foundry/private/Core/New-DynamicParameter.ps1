@@ -137,7 +137,7 @@ function NewDynamicParameter {
 
             catch {
 
-                Write-Error -ErrorAction Stop -Exception $_.Exception
+                $PSCmdlet.ThrowTerminatingError($PSItem)
 
             } # end outer catch
 

@@ -1,6 +1,6 @@
 function CreateModuleManifest {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium')]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'low')]
 
     param (
 
@@ -11,22 +11,50 @@ function CreateModuleManifest {
 
     )
 
-    $splat = @{
+    try {
 
-        GUID              = (New-Guid).Guid
-        RootModule        = ($($Project.Name) + '.psm1')
-        FormatsToProcess  = 'Format.ps1xml'
-        Path              = Join-Path -Path $Project.ProjectPath -ChildPath ($($Project.Name) + '.psd1')
-        PowerShellVersion = ($PSVersionTable.PSVersion.ToString()).SubString(0, 3)
-        ClrVersion        = $PSVersionTable.CLRVersion
-        Author            = $script:Scoped_ModuleConfig.AuthorFullName
-        FunctionsToExport = @()
-        VariablesToExport = @()
-        AliasesToExport   = @()
-        CmdletsToExport   = @()
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating module manifest..."
+
+        $splat = @{
+
+            Description       = $Project.Description
+
+            GUID              = (New-Guid).Guid
+
+            RootModule        = ($($Project.Name) + '.psm1')
+
+            FormatsToProcess  = 'Format.ps1xml'
+
+            Path              = Join-Path -Path $Project.ProjectPath -ChildPath ($($Project.Name) + '.psd1')
+
+            PowerShellVersion = ($PSVersionTable.PSVersion.ToString()).SubString(0, 3)
+
+            Author            = $script:Scoped_ModuleConfig.AuthorFullName
+
+            FunctionsToExport = @()
+
+            VariablesToExport = @()
+
+            AliasesToExport   = @()
+
+            CmdletsToExport   = @()
+
+        }
+
+        if ($PSVersionTable.PSVersion -lt ([system.version] '6.0.0')) {
+
+            $splat.Add('ClrVersion', $PSVersionTable.CLRVersion)
+
+        }
+
+        New-ModuleManifest @splat
+
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created module manifest."
+
+    } catch {
+
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     }
-
-    New-ModuleManifest @splat
 
 }

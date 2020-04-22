@@ -43,6 +43,11 @@ function New-Project {
 
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, Position = 1)]
         [ValidateNotNullOrEmpty()]
+        [string]
+        $Description,
+
+        [Parameter(Mandatory, ValueFromPipelineByPropertyName, Position = 2)]
+        [ValidateNotNullOrEmpty()]
         [ValidateSet('Module', 'Script')]
         [string]
         $Type,

@@ -27,9 +27,11 @@ function CreateProjectFileSet {
 
         $set | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Creating project file: $($_)."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating project file: $($_)..."
 
             New-Item -ItemType File -Name $_ -Path (Join-Path -Path $Project.RepositoryPath -ChildPath $Project.Name) | Out-Null
+
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created project file."
 
         }
 
@@ -37,7 +39,7 @@ function CreateProjectFileSet {
 
     } catch {
 
-        Write-Error -Exception $_.Exception -ErrorAction Continue
+        $PSCmdlet.ThrowTerminatingError($PSItem)
 
     } finally {
 

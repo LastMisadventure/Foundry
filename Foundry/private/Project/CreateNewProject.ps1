@@ -15,6 +15,8 @@ function CreateNewProject {
 
         $project = [Project]::New((Join-Path -Path $script:Scoped_ModuleConfig.LocalRepository -ChildPath $Request.Name))
 
+        $project.Description = $Request.Description
+
         $project.IsModule = $Request.Type -eq 'Module'
 
         $result = [PSCustomObject] [ordered] @{

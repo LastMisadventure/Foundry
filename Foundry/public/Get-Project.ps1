@@ -8,8 +8,8 @@ Gets a list of projects. Projects returned by this cmdlet can be piped to other 
 .PARAMETER Name
 Wildcard. Returns projects that match this value.
 
-.PARAMETER Language
-Returns projects that (primarily) use this language.
+.PARAMETER Refresh
+Forcibly refreshes the project list.
 
 .EXAMPLE
 Get-Project Foundry
@@ -31,11 +31,22 @@ function Get-Project {
         [Parameter(Mandatory, ValueFromPipeline, Position = 0, ParameterSetName = 'GetProjectByNameLike')]
         [ValidateNotNullOrEmpty()]
         [string[]]
-        $Name
+        $Name,
+
+        [Parameter(ValueFromPipelineByPropertyName)]
+        [ValidateNotNullOrEmpty()]
+        [switch]
+        $Refresh
 
     )
 
     process {
+
+        if ($Refresh.IsPresent) {
+
+            [Portfolio]::LoadFromRepositoryDirectory()
+
+        }
 
         if ($PSCmdlet.ParameterSetName -eq 'GetAll') {
 

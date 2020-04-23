@@ -44,7 +44,7 @@ function Publish-Project {
 
             $options = @{
 
-                Name        = $project.Name
+                Path        = $project.ProjectPath
 
                 NuGetApiKey = $ApiKey
 

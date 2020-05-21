@@ -3,7 +3,13 @@
 Increments a module's version number (as stored in its manifest).
 
 .DESCRIPTION
-Increments a module's version number (as stored in its manifest).
+Increments a module's version number (as stored in its manifest). Review the guide below to know which value to increment:
+
+* MAJOR - when you make incompatible API changes.
+
+* MINOR - when you add functionality in a backwards compatible manner
+
+* PATCH - when you make backwards compatible bug fixes.
 
 .PARAMETER IncrementMinor
 Increment the minor version.
@@ -14,25 +20,24 @@ Increment the major version.
 .EXAMPLE
 ProjectModuleVersion Core -IncrementMinor
 
+.LINK
+https://semver.org/
+
 .NOTES
-General notes
+PowerShell (as of 7.0) does not support SemVer 2.0, as it uses [system.version]. SemVer 2.0 was adopted by this module to have consistent(ish) versioning between PowerShell and Nuget-based repos.
 #>
 
 function Set-ProjectModuleVersion {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium', SupportsShouldProcess)]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'high', SupportsShouldProcess)]
 
     param (
 
-        [Parameter(Mandatory, ValueFromPipelineByPropertyName, ParameterSetName = 'IncrementMinor')]
-        [ValidateNotNullOrEmpty()]
-        [switch]
-        $IncrementMinor,
-
         [Parameter(Mandatory, ValueFromPipelineByPropertyName, ParameterSetName = 'IncrementMajor')]
         [ValidateNotNullOrEmpty()]
-        [switch]
-        $IncrementMajor
+        [ValidateSet('Major', 'Minor', 'Patch')]
+        [string]
+        $IncrementType
 
     )
 
@@ -50,7 +55,7 @@ function Set-ProjectModuleVersion {
 
                 $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
-                $projectManifestPath = Join-Path -Path $project.ProjectPath -ChildPath ($project.Name + '.psd1')
+                $projectManifestPath = Join-Path -Path $project.Paths.ProjectPath -ChildPath ($project.Name + '.psd1')
 
                 $projectManifest = Import-PowerShellDataFile -Path $projectManifestPath
 
@@ -60,25 +65,37 @@ function Set-ProjectModuleVersion {
 
                 $incrementedVersion = [PSCustomObject] [ordered] @{
 
-                    Major = $currentVersion.Major
+                    'Major' = $currentVersion.Major
 
-                    Minor = $currentVersion.Minor
+                    'Minor' = $currentVersion.Minor
 
-                }
-
-                if ($IncrementMajor.IsPresent) {
-
-                    $incrementedVersion.Major++
+                    'Patch' = $currentVersion.Build
 
                 }
 
-                if ($IncrementMinor.IsPresent) {
+                switch ($IncrementType) {
 
-                    $incrementedVersion.Minor++
+                    'Major' {
+
+                        $incrementedVersion.Major++
+
+                    }
+
+                    'Minor' {
+
+                        $incrementedVersion.Minor++
+
+                    }
+
+                    'Patch' {
+
+                        $incrementedVersion.Patch++
+
+                    }
 
                 }
 
-                $newVersion = ([system.version]::New($incrementedVersion.Major, $incrementedVersion.Minor).ToString())
+                $newVersion = ([system.version]::New($incrementedVersion.Major, $incrementedVersion.Minor, $incrementedVersion.Patch).ToString())
 
                 Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name): New version is $newVersion."
 

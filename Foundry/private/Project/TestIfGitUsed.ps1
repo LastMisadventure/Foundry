@@ -15,7 +15,7 @@ function TestIfGitUsed {
 
     try {
 
-        Write-Output (Test-Path -Path $Project.GitPath -PathType Container)
+        Write-Output (Test-Path -Path $project.Paths.gitPath -PathType Container)
 
     } catch {
 

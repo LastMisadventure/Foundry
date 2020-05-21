@@ -20,9 +20,7 @@ function LoadAllProjectsInLocalRepository {
 
             $project = [Project]::New($_)
 
-            $project.IsModule = TestIsModule $project
-
-            if (TestIfGitUsed $project) {
+            if (TestIfGitUsed -Project $project) {
 
                 $project.Branch = GetCurrentGitBranch $project
 

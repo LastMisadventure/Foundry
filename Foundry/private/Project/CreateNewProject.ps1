@@ -17,7 +17,7 @@ function CreateNewProject {
 
         $project.Description = $Request.Description
 
-        $project.IsModule = $Request.Type -eq 'Module'
+        $Request.Type -eq 'Module'
 
         $result = [PSCustomObject] [ordered] @{
 

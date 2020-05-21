@@ -15,7 +15,7 @@ function CopyVsCodeFileSet {
 
     try {
 
-        Get-ChildItem -File -Path $PSScriptRoot\Templates | Copy-Item -Recurse -Destination (Join-Path -Path $Project.RepositoryPath -ChildPath '.vscode')
+        Get-ChildItem -File -Path $PSScriptRoot\Templates | Copy-Item -Recurse -Destination (Join-Path -Path $project.Paths.RepositoryPath -ChildPath '.vscode')
 
         $taskResult = 'Success'
 

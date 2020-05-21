@@ -21,11 +21,11 @@ function CreateRepositoryFileSet {
 
         $repoistoryFileSet | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($Project.RepositoryPath)."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($project.Paths.RepositoryPath)."
 
-            New-Item -ItemType File -Name $_ -Path $Project.RepositoryPath | Out-Null
+            New-Item -ItemType File -Name $_ -Path $project.Paths.RepositoryPath | Out-Null
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($Project.RepositoryPath)."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating repository file: $($_) in $($project.Paths.RepositoryPath)."
 
         }
 

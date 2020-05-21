@@ -19,7 +19,7 @@ function InvokePsScriptAnalyzer {
 
         Recurse  = $true
 
-        Path     = $Project.ProjectPath
+        Path     = $Project.Paths.ProjectPath
 
     }
 

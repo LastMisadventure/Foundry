@@ -13,7 +13,7 @@ function TestIsModule {
 
     )
 
-    $manifestPath = Join-Path -Path $Project.ProjectPath -ChildPath ($Project.Name + '.psd1')
+    $manifestPath = Join-Path -Path $Project.Paths.ProjectPath -ChildPath ($Project.Name + '.psd1')
 
     Test-Path -Path $manifestPath -PathType Leaf
 

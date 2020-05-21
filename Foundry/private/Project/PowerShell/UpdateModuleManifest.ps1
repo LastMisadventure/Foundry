@@ -11,7 +11,7 @@ function UpdateModuleManifest {
 
     )
 
-    [System.IO.FileInfo] $moduleManifestPath = Join-Path -Path $Project.ProjectPath -ChildPath ($Project.Name + '.psd1')
+    [System.IO.FileInfo] $moduleManifestPath = Join-Path -Path $Project.Paths.ProjectPath -ChildPath ($Project.Name + '.psd1')
 
     if (!(Test-Path -Path $moduleManifestPath.FullName -Type Leaf)) {
 
@@ -21,7 +21,7 @@ function UpdateModuleManifest {
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Building list of exported functions..."
 
-    [string[]] $publicFunctionNames = (Get-ChildItem -File -Recurse -Path (Join-Path -Path $Project.ProjectPath -ChildPath 'public')).BaseName
+    [string[]] $publicFunctionNames = (Get-ChildItem -File -Recurse -Path (Join-Path -Path $Project.Paths.ProjectPath -ChildPath 'public')).BaseName
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Found $($($publicFunctionNames | Measure-Object).Count) exported functions. They will be added to the manifest."
 

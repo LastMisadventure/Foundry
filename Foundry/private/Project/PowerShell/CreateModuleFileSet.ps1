@@ -21,9 +21,9 @@ function CreateModuleFileSet {
 
         $moduleFiles | ForEach-Object {
 
-            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating module file: $($_) in $($Project.ProjectPath)..."
+            Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating module file: $($_) in $($Project.Paths.ProjectPath)..."
 
-            New-Item -ItemType File -Name $_ -Path $Project.ProjectPath | Out-Null
+            New-Item -ItemType File -Name $_ -Path $Project.Paths.ProjectPath | Out-Null
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created module file."
 

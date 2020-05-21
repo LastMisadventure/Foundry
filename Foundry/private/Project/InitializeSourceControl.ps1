@@ -13,11 +13,11 @@ function InitializeSourceControl {
 
     try {
 
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initializing empty git repository at $($Project.RepositoryPath.FullName)..."
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initializing empty git repository at $($project.Paths.RepositoryPath.FullName)..."
 
-        git init ($Project.RepositoryPath.FullName) | Out-Null
+        git init ($project.Paths.RepositoryPath.FullName) | Out-Null
 
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initialized empty git repository at $($Project.RepositoryPath.FullName)."
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)]: Initialized empty git repository at $($project.Paths.RepositoryPath.FullName)."
 
     } catch {
 

@@ -15,7 +15,7 @@ function GetCurrentGitBranch {
 
     try {
 
-        $currentBranch = posh-git\Get-GitStatus -gitDir $Project.GitPath | Select-Object -ExpandProperty 'Branch'
+        $currentBranch = posh-git\Get-GitStatus -gitDir $project.Paths.gitPath | Select-Object -ExpandProperty 'Branch'
 
         Write-Output $currentBranch
 

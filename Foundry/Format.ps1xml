@@ -15,11 +15,14 @@
                     <TableColumnHeader>
                         <Label>Name</Label>
                     </TableColumnHeader>
+                        <TableColumnHeader>
+                        <Label>Version</Label>
+                    </TableColumnHeader>
                     <TableColumnHeader>
                         <Label>Branch</Label>
                     </TableColumnHeader>
                     <TableColumnHeader>
-                        <Label>RepositoryPath</Label>
+                        <Label>Description</Label>
                     </TableColumnHeader>
                 </TableHeaders>
                 <TableRowEntries>
@@ -29,10 +32,13 @@
                                 <PropertyName>Name</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
+                                <PropertyName>Version</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
                                 <PropertyName>Branch</PropertyName>
                             </TableColumnItem>
                             <TableColumnItem>
-                                <PropertyName>RepositoryPath</PropertyName>
+                                <PropertyName>Description</PropertyName>
                             </TableColumnItem>
                         </TableColumnItems>
                     </TableRowEntry>

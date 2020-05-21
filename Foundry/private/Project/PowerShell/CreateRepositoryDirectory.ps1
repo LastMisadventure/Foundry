@@ -33,7 +33,7 @@ function CreateRepositoryDirectory {
 
             Name = ".vscode"
 
-            Path = $Project.RepositoryPath
+            Path = $project.Paths.RepositoryPath
 
             Type = 'Directory'
 

@@ -39,7 +39,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 
     try {
 
-        Set-Content -Value $license -Path (Join-Path -Path $Project.RepositoryPath -ChildPath 'LICENSE') -ErrorAction Stop -Force
+        Set-Content -Value $license -Path (Join-Path -Path $project.Paths.RepositoryPath -ChildPath 'LICENSE') -ErrorAction Stop -Force
 
     } catch {
 

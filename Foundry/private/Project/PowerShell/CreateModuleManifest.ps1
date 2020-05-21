@@ -23,9 +23,11 @@ function CreateModuleManifest {
 
             RootModule        = ($($Project.Name) + '.psm1')
 
+            ModuleVersion     = '0.0.0'
+
             FormatsToProcess  = 'Format.ps1xml'
 
-            Path              = Join-Path -Path $Project.ProjectPath -ChildPath ($($Project.Name) + '.psd1')
+            Path              = Join-Path -Path $Project.Paths.ProjectPath -ChildPath ($($Project.Name) + '.psd1')
 
             PowerShellVersion = ($PSVersionTable.PSVersion.ToString()).SubString(0, 3)
 

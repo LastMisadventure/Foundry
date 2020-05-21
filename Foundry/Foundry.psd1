@@ -12,7 +12,7 @@
     RootModule        = 'Foundry.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0'
+    ModuleVersion     = '1.0.0'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -24,10 +24,10 @@
     Author            = 'Alexander J. Crino'
 
     # Company or vendor of this module
-    CompanyName       = 'Unknown'
+    CompanyName       = ''
 
     # Copyright statement for this module
-    Copyright         = '(c) 2018 Alexander J. Crino. All rights reserved.'
+    Copyright         = '(c) 2020 Alexander J. Crino. All rights reserved.'
 
     # Description of the functionality provided by this module
     Description       = 'Provides tools for developing PowerShell scripts and modules.'
@@ -51,7 +51,18 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules   = @(@{ModuleName = 'Posh-Git'; RequiredVersion = '0.7.3'; })
+    RequiredModules   = @(
+
+        @{
+            ModuleName      = 'Posh-Git'
+
+            GUID            = '74c9fd30-734b-4c89-a8ae-7727ad21d1d5'
+
+            RequiredVersion = '0.7.3'
+
+        }
+
+    )
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()

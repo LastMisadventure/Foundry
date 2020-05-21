@@ -34,7 +34,7 @@ function Move-ProjectToArchive {
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name) Compressing project directory to $($script:Scoped_ModuleConfig.RepositoryArchive)..."
 
-            Compress-Archive -Path $project.RepositoryPath -DestinationPath (Join-Path -Path $script:Scoped_ModuleConfig.RepositoryArchive -ChildPath $project.Name)
+            Compress-Archive -Path $project.Paths.RepositoryPath -DestinationPath (Join-Path -Path $script:Scoped_ModuleConfig.RepositoryArchive -ChildPath $project.Name)
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($project.Name) Compressed project directory. The project will now be removed from the active project directory."
 

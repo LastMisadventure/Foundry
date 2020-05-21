@@ -15,21 +15,13 @@ function CreateProjectFileSet {
 
         $taskResult = 'Fail'
 
-        if ($Project.IsModule -eq $true) {
-
-            $set = $Scoped_ModuleConfig.Build.Module.Files
-
-        } else {
-
-            $set = $Scoped_ModuleConfig.Build.Script.Files
-
-        }
+        $set = $Scoped_ModuleConfig.Build.Module.Files
 
         $set | ForEach-Object {
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Creating project file: $($_)..."
 
-            New-Item -ItemType File -Name $_ -Path (Join-Path -Path $Project.RepositoryPath -ChildPath $Project.Name) | Out-Null
+            New-Item -ItemType File -Name $_ -Path (Join-Path -Path $project.Paths.RepositoryPath -ChildPath $Project.Name) | Out-Null
 
             Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Created project file."
 

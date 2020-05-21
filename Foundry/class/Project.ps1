@@ -16,15 +16,11 @@ class Project {
 
     [string] $Description
 
-    [System.IO.DirectoryInfo] $RepositoryPath
+    [PSCustomObject] $Paths
 
-    [System.IO.DirectoryInfo] $ProjectPath
+    [System.Version] $Version
 
-    [System.IO.DirectoryInfo] $GitPath
-
-    [System.IO.DirectoryInfo] $TestPath
-
-    [bool] $IsModule
+    [array] $RequiredModules
 
     [bool] $RepositoryInitialized
 
@@ -34,13 +30,41 @@ class Project {
 
         $this.Name = $Directory.Name
 
-        $this.RepositoryPath = $Directory.FullName
+        $repositoryPath = [System.IO.DirectoryInfo] $Directory.FullName
 
-        $this.ProjectPath = (Join-Path -Path $Directory.FullName -ChildPath $Directory.Name)
+        $projectPath = [System.IO.DirectoryInfo] (Join-Path -Path $Directory.FullName -ChildPath $Directory.Name)
 
-        $this.GitPath = (Join-Path -Path $Directory.FullName -ChildPath ".git")
+        $gitPath = [System.IO.DirectoryInfo] (Join-Path -Path $Directory.FullName -ChildPath '.git')
 
-        $this.TestPath = (Join-Path -Path $this.ProjectPath.FullName -ChildPath "tests")
+        $testPath = [System.IO.DirectoryInfo] (Join-Path -Path $projectPath.FullName -ChildPath 'tests')
+
+        $manifestPath = [System.IO.DirectoryInfo] (Join-Path -Path $projectPath -ChildPath ("$($Directory.Name)" + '.psd1'))
+
+        $this.Paths = [PSCustomObject] [ordered] @{
+
+            RepositoryPath = $repositoryPath
+
+            ProjectPath    = $projectPath
+
+            GitPath        = $gitPath
+
+            TestPath       = $testPath
+
+            ManifestPath   = $manifestPath
+
+        }
+
+        $manifest = Import-PowerShellDataFile -ErrorAction Stop -Path $manifestPath
+
+        $_description = 'No description (please add one!)'
+
+        $manifest | Select-Object -Property Description | Select-Object -ExpandProperty Description | ForEach-Object { $_description = $_ }
+
+        $this.Description = $_description
+
+        $this.Version = $manifest.ModuleVersion
+
+        $this.RequiredModules = GetModuleDepandancy -ErrorAction Stop -Project $this
 
     }
 
@@ -130,7 +154,7 @@ class Portfolio {
 
     static [Project[]] FindByNameFuzzy ([string] $Name) {
 
-        return ([Portfolio]::Projects | Where-Object { $_.Name -like "*$Name*" })
+        return ([Portfolio]::Projects | Where-Object { $_.Name -match $Name })
 
     }
 

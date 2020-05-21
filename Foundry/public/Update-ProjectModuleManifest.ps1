@@ -23,7 +23,7 @@ function Update-ProjectModuleManifest {
 
     dynamicParam {
 
-        NewDynamicParameterDictionary -DynamicParameter $script:Scoped_DynamicParams_PsModuleProjectNames
+        NewDynamicParameterDictionary -DynamicParameter $script:Scoped_DynamicParams_ProjectNames
 
     }
 

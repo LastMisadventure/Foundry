@@ -45,7 +45,7 @@ function Remove-Project {
 
                 $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
 
-                $project.RepositoryPath.Delete($true)
+                $project.Paths.RepositoryPath.Delete($true)
 
             } catch {
 

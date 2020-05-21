@@ -18,7 +18,7 @@ function InvokePsTestSuite {
 
         Strict   = $true
 
-        Script   = $Project.TestPath
+        Script   = $project.Paths.TestPath
 
     }
 

@@ -46,12 +46,6 @@ function New-Project {
         [string]
         $Description,
 
-        [Parameter(Mandatory, ValueFromPipelineByPropertyName, Position = 2)]
-        [ValidateNotNullOrEmpty()]
-        [ValidateSet('Module', 'Script')]
-        [string]
-        $Type,
-
         [Parameter(ValueFromPipelineByPropertyName)]
         [ValidateNotNullOrEmpty()]
         [switch]
@@ -66,7 +60,7 @@ function New-Project {
 
     process {
 
-        if ($PsCmdlet.ShouldProcess("Create a new $($Type) project named '$($Name)'.")) {
+        if ($PsCmdlet.ShouldProcess("Create a project named '$($Name)'.")) {
 
             CreateNewProject $PSBoundParameters
 

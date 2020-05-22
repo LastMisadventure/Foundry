@@ -17,8 +17,6 @@ function CreateNewProject {
 
         $project.Description = $Request.Description
 
-        $Request.Type -eq 'Module'
-
         $result = [PSCustomObject] [ordered] @{
 
             CreateRepositoryDirectory = CreateRepositoryDirectory $project
@@ -33,13 +31,9 @@ function CreateNewProject {
 
         }
 
-        if ($Request.Type -eq 'Module') {
+        CreateModuleFileSet $project
 
-            CreateModuleFileSet $project
-
-            UpdatePsModulePath
-
-        }
+        UpdatePsModulePath
 
         if (!$Request.ContainsKey('SkipSourceControlInit')) {
 

@@ -54,17 +54,21 @@ class Project {
 
         }
 
-        $manifest = Import-PowerShellDataFile -ErrorAction Stop -Path $manifestPath
+        if (Test-Path -Path $manifestPath) {
 
-        $_description = 'No description (please add one!)'
+            $manifest = Import-PowerShellDataFile -ErrorAction Stop -Path $manifestPath
 
-        $manifest | Select-Object -Property Description | Select-Object -ExpandProperty Description | ForEach-Object { $_description = $_ }
+            $_description = 'No description (please add one!)'
 
-        $this.Description = $_description
+            $manifest | Select-Object -Property Description | Select-Object -ExpandProperty Description | ForEach-Object { $_description = $_ }
 
-        $this.Version = $manifest.ModuleVersion
+            $this.Description = $_description
 
-        $this.RequiredModules = GetModuleDepandancy -ErrorAction Stop -Project $this
+            $this.Version = $manifest.ModuleVersion
+
+            $this.RequiredModules = GetModuleDepandancy -ErrorAction Stop -Project $this
+
+        }
 
     }
 

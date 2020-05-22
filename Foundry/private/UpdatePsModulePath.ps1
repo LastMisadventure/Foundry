@@ -14,7 +14,7 @@ function UpdatePsModulePath {
 
         $nonProjectModulesInPsModulePath = GetNonProjectModulesInPsModulePath | Select-Object -Unique
 
-        $projectPowerShellModuleProjectPaths = ([Portfolio]::FindAll()).RepositoryPath.FullName
+        $projectPowerShellModuleProjectPaths = ([Portfolio]::FindAll()).Paths.RepositoryPath.FullName
 
         Write-Verbose "[$($MyInvocation.MyCommand.Name)]: A total of $($($projectPowerShellModuleProjectPaths | Measure-Object).Count) modules will be added to PsModulePath."
 

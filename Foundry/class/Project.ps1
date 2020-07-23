@@ -38,7 +38,7 @@ class Project {
 
         $testPath = [System.IO.DirectoryInfo] (Join-Path -Path $projectPath.FullName -ChildPath 'tests')
 
-        $manifestPath = [System.IO.DirectoryInfo] (Join-Path -Path $projectPath -ChildPath ("$($Directory.Name)" + '.psd1'))
+        $manifestPath = [System.IO.FileInfo] (Join-Path -Path $projectPath -ChildPath ("$($Directory.Name)" + '.psd1'))
 
         $this.Paths = [PSCustomObject] [ordered] @{
 
@@ -74,7 +74,7 @@ class Project {
 
     [void] Open () {
 
-        code.cmd $this.RepositoryPath
+        code.cmd $this.Paths.RepositoryPath
 
     }
 

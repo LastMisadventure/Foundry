@@ -60,7 +60,11 @@ class Project {
 
             $_description = 'No description (please add one!)'
 
-            $manifest | Select-Object -Property Description | Select-Object -ExpandProperty Description | ForEach-Object { $_description = $_ }
+            if ($manifest.ContainsKey('Description')) {
+
+                $_description = $manifest.Description
+
+            }
 
             $this.Description = $_description
 

@@ -21,9 +21,6 @@
                     <TableColumnHeader>
                         <Label>Branch</Label>
                     </TableColumnHeader>
-                    <TableColumnHeader>
-                        <Label>Description</Label>
-                    </TableColumnHeader>
                 </TableHeaders>
                 <TableRowEntries>
                     <TableRowEntry>
@@ -36,9 +33,6 @@
                             </TableColumnItem>
                             <TableColumnItem>
                                 <PropertyName>Branch</PropertyName>
-                            </TableColumnItem>
-                            <TableColumnItem>
-                                <PropertyName>Description</PropertyName>
                             </TableColumnItem>
                         </TableColumnItems>
                     </TableRowEntry>

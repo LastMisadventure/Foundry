@@ -12,10 +12,6 @@ function NewDynamicParameterDictionary {
 
     )
 
-    begin {
-
-    } # End block 'begin'.
-
     process {
 
         $spOperation = 'Create a "[System.Management.Automation.RuntimeDefinedParameterDictionary]" object'

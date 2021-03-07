@@ -20,8 +20,6 @@ class Project {
 
     [System.Version] $Version
 
-    [array] $RequiredModules
-
     [bool] $RepositoryInitialized
 
     [string] $Branch
@@ -70,11 +68,11 @@ class Project {
 
             $this.Version = $manifest.ModuleVersion
 
-            $this.RequiredModules = GetModuleDepandancy -ErrorAction Stop -Project $this
-
         }
 
     }
+
+    #region methods
 
     [void] Open () {
 
@@ -84,13 +82,13 @@ class Project {
 
     [CodeHygieneResult] InvokeCodeAnalyzer () {
 
-        return (InvokePsScriptAnalyzer $this)
+        return (InvokePsScriptAnalyzer -Project $this)
 
     }
 
     [CodeHygieneResult] InvokeTestSuite () {
 
-        return (InvokePsTestSuite $this)
+        return (InvokePsTestSuite -Project $this)
 
     }
 
@@ -119,6 +117,8 @@ class Project {
     }
 
 }
+
+#endregion
 
 class ProjectFactory {
 

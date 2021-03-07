@@ -42,7 +42,7 @@ function Invoke-TestSuite {
 
         } catch {
 
-            $PSCmdlet.ThrowTerminatingError($PSItem)
+            Write-Error $_
 
         }
 

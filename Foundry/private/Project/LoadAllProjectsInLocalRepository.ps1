@@ -22,7 +22,9 @@ function LoadAllProjectsInLocalRepository {
 
             if (TestIfGitUsed -Project $project) {
 
-                $project.Branch = GetCurrentGitBranch $project
+                $gitStatus = posh-git\Get-GitStatus -gitDir $project.Paths.GitPath.FullName -ErrorAction Stop
+
+                $project.Branch = $gitStatus.Branch
 
                 $project.RepositoryInitialized = $true
 
@@ -34,7 +36,7 @@ function LoadAllProjectsInLocalRepository {
 
     } catch {
 
-        $PSCmdlet.ThrowTerminatingError($PSItem)
+        Write-Error $_
 
     }
 

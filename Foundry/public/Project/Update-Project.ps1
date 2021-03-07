@@ -9,15 +9,15 @@ Updates workspace snippets, debug settings, and tasks.
 The name of the project that will be targeted by this operation.
 
 .EXAMPLE
-Update-ProjectVsCodeFileSet -Name Foundry
+Update-Project -Name Foundry
 
 .NOTES
 General notes
 #>
 
-function Update-ProjectVsCodeFileSet {
+function Update-Project {
 
-    [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium')]
+    [CmdletBinding(PositionalBinding, ConfirmImpact = 'low')]
 
     param (
 
@@ -31,7 +31,11 @@ function Update-ProjectVsCodeFileSet {
 
     process {
 
-        CopyVsCodeFileSet -Project ([Portfolio]::FindOneByNameExact($PsBoundParameters.Name)) | Out-Null
+        $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
+
+        CopyVsCodeFileSet -Project $project | Out-Null
+
+        $project.UpdateManifest()
 
     }
 

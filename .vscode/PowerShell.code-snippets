@@ -1,6 +1,6 @@
 {
   "Advanced Function": {
-    "prefix": "ffunction",
+    "prefix": "fFunction",
     "body": [
       "function ${1:FunctionName} {",
       "",
@@ -23,7 +23,7 @@
       "",
       "\t\t } catch {",
       "",
-      "\t\t\t\\$PSCmdlet.ThrowTerminatingError(\\$PSitem)",
+      "\t\t\tWrite-Error \\$_",
       "",
       "\t\t}",
       "",
@@ -35,26 +35,27 @@
       "",
       "}"
     ],
-    "description": "Advanced Function Template"
+    "description": "Foundry Advanced Function"
   },
   "Verbose Header": {
-    "prefix": "VH",
-    "body": ["Write-Verbose \"[$(\\$MyInvocation.MyCommand.Name)]: $0 \""],
-    "description": "Write-Verbose Header"
-  },
-
-  "Parameter Template": {
-    "prefix": "fparam",
+    "prefix": "fVH",
     "body": [
-      "[Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline, ValueFromRemainingArguments)]",
-      "[ValidateNotNullOrEmpty()]",
-      "[TypeName]",
-      "\\$${1:Input1}"
+      "Write-Verbose \"[$(\\$MyInvocation.MyCommand.Name)]: $0 \""
     ],
-    "description": "Parameter template"
+    "description": "Foundry Write-Verbose Prefix"
+  },
+  "Parameter Template": {
+    "prefix": "fParameter",
+    "body": [
+      "[Parameter(Mandatory, ValueFromPipelineByPropertyName, ValueFromPipeline)]",
+      "[ValidateNotNullOrEmpty()]",
+      "[<TypeName>]",
+      "\\$${1:ParameterName}"
+    ],
+    "description": "Foundry Parameter"
   },
   "TryCatch": {
-    "prefix": "ftry",
+    "prefix": "fTry",
     "body": [
       "\ttry {",
       "",
@@ -66,10 +67,10 @@
       "",
       "\t}"
     ],
-    "description": "TryCatch"
+    "description": "Foundry Try+Catch"
   },
   "TryCatchFinally": {
-    "prefix": "ftryf",
+    "prefix": "fTryF",
     "body": [
       "\ttry {",
       "",
@@ -81,8 +82,9 @@
       "",
       "\t} finally {",
       "",
+      "\t}",
       ""
     ],
-    "description": "TryCatchFinally"
+    "description": "Foundry Try+Catch+Finally"
   }
 }

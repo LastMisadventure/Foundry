@@ -11,7 +11,7 @@ Import-ProjectModule <ProjectName>
 .NOTES
 General notes
 #>
-function Import-ProjectModule {
+function Import-Project {
 
     [CmdletBinding(PositionalBinding, ConfirmImpact = 'medium')]
 
@@ -29,9 +29,17 @@ function Import-ProjectModule {
 
         Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Importing by manifest file (Force, Global)..."
 
-        $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
+        try {
 
-        Import-Module -ErrorAction Stop -Force -Global $project.Paths.ManifestPath.FullName
+            $project = [Portfolio]::FindOneByNameExact($PsBoundParameters.Name)
+
+            Import-Module -ErrorAction Stop -Force -Global $project.Paths.ManifestPath.FullName
+
+        } catch {
+
+            Write-Error $_
+
+        }
 
         Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($PSBoundParameters.Name): Imported project."
 

@@ -1,42 +1,4 @@
-<#
-.SYNOPSIS
-Short description
 
-.DESCRIPTION
-Long description
-
-.PARAMETER Name
-The name of the resulting parameter. This is what the consumer will specify on the commandline.
-
-.PARAMETER Mandatory
-Sets 'Mandatory' on the resulting parameter.
-
-.PARAMETER Position
-Enables and defines the position of the resulting parameter.
-Ensure statically-defined parameters do not conflict with this position. Multiple dynamically-defined parameters can share the same positon
-if they do not share the same parameter set.
-
-.PARAMETER ValueFromPipeLine
-Enables 'ValueFromPipeLine' binding behavior for the resulting parameter.
-
-.PARAMETER ValueFromPipeLineByPropertyName
-Enables 'ValueFromPipeLineByPropertyName' binding behavior for the resulting parameter.
-
-.PARAMETER ValidateData
-A set of data with which to validate bound values of the resulting parameter.
-
-.PARAMETER ParamTypeName
-The type name of the resulting parameter.
-
-.PARAMETER ParameterSet
-The name of the parameter set the resulting parameter will belong to.
-
-.EXAMPLE
-An example
-
-.NOTES
-General notes
-#>
 function NewDynamicParameter {
 
     [CmdletBinding(ConfirmImpact = 'low', SupportsShouldProcess)]
@@ -83,10 +45,6 @@ function NewDynamicParameter {
         $ParameterSet = '__AllParameterSets'
 
     )
-
-    begin {
-
-    } # end block 'begin'
 
     process {
 
@@ -144,9 +102,5 @@ function NewDynamicParameter {
         } # End 'ShouldProcess {}'.
 
     } # end block 'process'.
-
-    end {
-
-    } # end block 'end'.
 
 } # end function 'NewDynamicParameter'.

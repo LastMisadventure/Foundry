@@ -15,13 +15,13 @@ function GetCurrentGitBranch {
 
     try {
 
-        $currentBranch = posh-git\Get-GitStatus -gitDir $project.Paths.gitPath | Select-Object -ExpandProperty 'Branch'
+        $currentBranch = posh-git\Get-GitStatus -gitDir $project.Paths.GitPath.FullName | Select-Object -ExpandProperty 'Branch'
 
         Write-Output $currentBranch
 
     } catch {
 
-        $PSCmdlet.ThrowTerminatingError($PSItem)
+        Write-Error $_
 
     }
 

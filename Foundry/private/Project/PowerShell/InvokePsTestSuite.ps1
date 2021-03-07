@@ -8,25 +8,22 @@ function InvokePsTestSuite {
         [ValidateNotNullOrEmpty()]
         [Project]
         $Project
+
     )
 
-    $splat = @{
+    $configuration = [PesterConfiguration]::Default
 
-        Show     = 'None'
+    $configuration.Output.Verbosity.Value = 'none'
 
-        PassThru = $true
+    $configuration.Run.Path.Value = $project.Paths.TestPath.FullName
 
-        Strict   = $true
-
-        Script   = $project.Paths.TestPath
-
-    }
+    $configuration.Run.PassThru.Value = $true
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Running Pester tests..."
 
-    $pesterResult = Invoke-Pester @splat
+    $result = Invoke-Pester -Configuration $configuration
 
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): RanPester tests."
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]: $($Project.Name): Ran Pester tests."
 
     $codeHygieneResult = [CodeHygieneResult]::New()
 
@@ -34,11 +31,9 @@ function InvokePsTestSuite {
 
     $codeHygieneResult.Type = 'TestSuite'
 
-    $codeHygieneResult.Pass = $pesterResult.FailedCount -eq 0
+    $codeHygieneResult.Pass = $result.FailedCount -eq 0
 
-    $failedTests = $pesterResult.TestResult | Where-Object { $_.Passed -ne $true } | Select-Object -ExpandProperty Describe
-
-    $codeHygieneResult.Defects = $failedTests
+    $codeHygieneResult.Defects = $result.Failed | Select-Object -ExpandProperty ExpandedPath
 
     Write-Output $codeHygieneResult
 

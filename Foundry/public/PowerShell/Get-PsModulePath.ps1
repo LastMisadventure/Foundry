@@ -63,7 +63,7 @@ function Get-PsModulePath {
 
         } catch {
 
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            Write-Error $_
 
         }
 

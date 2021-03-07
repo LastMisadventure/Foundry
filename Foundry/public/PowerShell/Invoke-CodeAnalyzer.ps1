@@ -41,7 +41,7 @@ function Invoke-CodeAnalyzer {
 
             } catch {
 
-                $PsCmdlet.ThrowTerminatingError($PSItem)
+                Write-Error $_
 
             }
 
